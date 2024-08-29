@@ -14,8 +14,8 @@ import {
 import { motion } from "framer-motion"
 
 const components: { title: string; href: string }[] = [
-  { title: "Custom Essay Writing", href: "/essay-writing" },
-  { title: "Research Papers", href: "/research-papers" },
+  { title: "Custom Essay Writing", href: "/writers" },
+  { title: "Research Papers", href: "/writers" },
   { title: "Editing & Proofreading", href: "/proofreading" },
   { title: "Academic Consulting", href: "/academic-consulting" },
   { title: "Plagiarism Checking", href: "/plagiarism-checking" },
@@ -164,9 +164,9 @@ export function NavMenu({ mobile = false }: { mobile?: boolean }) {
                 <NavigationMenuLink asChild>
                   <Link href="/writers">Meet Our Writers</Link>
                 </NavigationMenuLink>
-                <NavigationMenuLink asChild>
+                {/* <NavigationMenuLink asChild>
                   <Link href="/writers/apply">Become a Writer</Link>
-                </NavigationMenuLink>
+                </NavigationMenuLink> */}
               </li>
             </ul>
           </NavigationMenuContent>

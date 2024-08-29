@@ -61,10 +61,10 @@ const carouselSettings = {
 
 const Hero = () => {
   return (
-    <section className="hero-bg-image relative py-16 min-h-screen px-4 md:px-8 lg:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
+    <section className="hero-bg-image relatie py-16 min-h-screen px-4 md:px-8 xl:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
       <div className="hero-bg-left inset-0 absolute z-0" />
 
-      <div className="w-full lg:w-2/3 flex flex-col items-center text-center relative z-10 mt-6 md:mt-0">
+      <div className="w-full lg:w-2/3 flex flex-col items-center text-center rve m-h-fit py-10 z-10 mt-6 md:mt-0">
         <h1 className="text-black dark:text-gray-200 font-semibold text-4xl md:text-5xl md:font-medium leading-tight drop-shadow-lg mb-6 lg:mb-4">
           Unlock Your Brilliance. Write Your Success Story.
         </h1>
@@ -72,7 +72,7 @@ const Hero = () => {
           Need a writer? Connect instantly with top experts for any project, any time.
         </p>
 
-        <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
+        <div className="flex gap-4 flex-wrap justify-center lg:justify-start mb-16 md:mb-0 lg:mb-28 xl:mb-16 ">
           <Link href='/writers'className="px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black text-center rounded-md shadow-lg transition-all">
             Hire a Writer
           </Link>

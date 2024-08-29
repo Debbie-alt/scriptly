@@ -49,7 +49,7 @@ export function AppSidebar() {
       <SidebarContent>
         {/* Brand */}
         <div className="px-4 py-6 text-center border-b border-gray-700">
-          <h1 className="text-2xl font-bold">✍️ Scriptly</h1>
+          <h1 className="text-2xl font-semibold">✍️ Scriptly</h1>
           {/* <p className="text-xs text-gray-400">Dashboard</p> */}
         </div>
 
