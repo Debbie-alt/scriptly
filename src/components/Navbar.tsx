@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { NavMenu } from './NavMenu'
+import { FiLogOut } from 'react-icons/fi'
 
 const Navbar = () => {
   return (
@@ -14,8 +15,11 @@ const Navbar = () => {
 
       <div className='flex items-center gap-4'>
         <Link href='/login'>Login</Link>
-        <Link href="/login"><span className="bg-[#0f0e47] text-white  px-7 py-2.5 rounded-md text-sm hover:bg-blue-700 transition">Book a Demo</span></Link>
-        
+        <Link href="/login">
+          <span className="bg-[#0f0e47] text-white px-7 py-2.5 rounded-md text-sm hover:bg-blue-700 transition flex items-center gap-2">
+            <FiLogOut className="w-4 h-4" /> Book a Demo
+          </span>
+        </Link>
         </div>
     </nav>
   )

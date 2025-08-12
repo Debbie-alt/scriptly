@@ -13,22 +13,22 @@ const carouselItems = [
   {
     title: 'Essay Writing',
     desc: 'Professional essays tailored to your needs. Fast, original, and always on time.',
-    icon: '📝',
+    icon: <span className="flex items-center justify-center w-10 h-10 rounded-full "><span className="text-lg">📝</span></span>,
   },
   {
     title: 'Research Papers',
     desc: 'In-depth research, citations, and expert analysis for any topic.',
-    icon: '📚',
+    icon: <span className="flex items-center justify-center w-10 h-10 rounded-full "><span className="text-lg">📚</span></span>,
   },
   {
     title: 'Editing & Proofreading',
     desc: 'Polished, error-free documents with professional review.',
-    icon: '🔍',
+    icon: <span className="flex items-center justify-center w-10 h-10 rounded-full "><span className="text-lg">🔍</span></span>,
   },
   {
     title: 'Creative Writing',
     desc: 'Stories, scripts, and creative content by top writers.',
-    icon: '🎨',
+    icon: <span className="flex items-center justify-center w-10 h-10 rounded-full "><span className="text-lg">🎨</span></span>,
   },
 ]
 
@@ -83,12 +83,8 @@ const Hero = () => {
           <Slider {...carouselSettings}>
             {carouselItems.map((item, idx) => (
               <div key={idx} className="px-3">
-
-
-
-                
-                <div className="glassmorph-card min-h-[180px] p-6 rounded-2xl shadow-2xl border border-white/40 bg-white/60 backdrop-blur-lg flex flex-col items-center justify-center transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer     z-20">
-                  <div className="text-2xl mb-3">{item.icon}</div>
+                <div className="glassmorph-card min-h-[180px] p-6 rounded-2xl shadow-2xl border border-white/40 bg-white/60 backdrop-blur-lg flex flex-col items-center justify-center transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer z-20">
+                  <div className="mb-3">{item.icon}</div>
                   <h3 className="text-base font-bold mb-2 text-black/90 text-center">{item.title}</h3>
                   <p className="text-gray-800/80 text-xs text-center leading-snug">{item.desc}</p>
                 </div>
