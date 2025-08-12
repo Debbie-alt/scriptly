@@ -73,21 +73,25 @@ export default function Faq() {
                 }
                 className="w-full flex gap-5 items-center p-4 text-left font-medium"
               >
-               
                 {openIndex === index ? (
-                  <div className="flex bg-gray-900 rounded-full items-center justify-center p-1 ">                  
+                  <div className="flex bg-gray-900 rounded-full items-center justify-center p-1 ">
                     <FiChevronUp className="w-4 h-4 text-white" />
-                </div>
+                  </div>
                 ) : (
-                                    <div className="flex bg-gray-900 rounded-full items-center justify-center p-1">                  
-                  <FiChevronDown className="w-4 h-4 text-white"  />
+                  <div className="flex bg-gray-900 rounded-full items-center justify-center p-1">
+                    <FiChevronDown className="w-4 h-4 text-white"  />
                   </div>
                 )}
-                 {faq.question}
+                {faq.question}
               </button>
-              {openIndex === index && (
-                <div className="px-4 pb-4 text-gray-600">{faq.answer}</div>
-              )}
+              <div
+                className={`grid transition-all duration-150 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100 py-2' : 'grid-rows-[0fr] opacity-0 py-0'}`}
+                style={{overflow: 'hidden'}}
+              >
+                <div className="px-4 pb-4 text-gray-600">
+                  {openIndex === index && faq.answer}
+                </div>
+              </div>
             </div>
           ))}
         </div>
