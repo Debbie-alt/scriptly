@@ -57,10 +57,9 @@ export default function Faq() {
             Talk to us
           </button>
 
-          {/* Decorative shapes */}
           <div className="mt-12 relative">
-            <div className="absolute -left-14 top-0 w-72 h-72 bg-purple-100 rounded-full blur-xl opacity-70"></div>
-            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#0f0e47] to-[#8686ac] relative z-10"></div>
+            <div className="absolute -left-14 top-0 w-72 h-72 bg-purple-100  blur-xl opacity-80 rounded-full"></div>
+            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#0f0e47] to-[8686ac] relative z-10 "></div>
           </div>
         </div>
 
