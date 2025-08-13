@@ -26,7 +26,24 @@ const testimonials: Testimonial[] = [
     author: 'Ingrid De Clercq',
     position: 'Chief People Officer at Deliverect',
   },
-  // add more testimonials if you want
+   {
+    id: 2,
+    logo1: '/deliverect.png', 
+    logo2: '/logo2.png',
+    quote:
+      'We are always expanding. We will continue supporting customers around the world, and G-P will continue to be a valued partner as we discover new markets to grow into.',
+    author: 'Ingrid De Clercq',
+    position: 'Chief People Officer at Deliverect',
+  },
+   {
+    id: 3,
+    logo1: '/deliverect.png', 
+    logo2: '/logo2.png',
+    quote:
+      'We are always expanding. We will continue supporting customers around the world, and G-P will continue to be a valued partner as we discover new markets to grow into.',
+    author: 'Ingrid De Clercq',
+    position: 'Chief People Officer at Deliverect',
+  },
 ]
 
 type ArrowProps = {
