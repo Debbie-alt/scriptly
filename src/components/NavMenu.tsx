@@ -16,39 +16,40 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Custom Essay Writing",
+    href: "/services/essay-writing",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Original, custom-written essays tailored to your requirements and academic level.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Assignment Help",
+    href: "/services/assignment-help",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Expert assistance with assignments across all subjects and disciplines.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Research Papers",
+    href: "/services/research-papers",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Comprehensive research and well-structured papers for any topic or field.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Editing & Proofreading",
+    href: "/services/editing-proofreading",
+    description:
+      "Professional editing and proofreading to ensure clarity, accuracy, and quality.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Academic Consulting",
+    href: "/services/academic-consulting",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Personalized academic advice and support for your educational journey.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Plagiarism Checking",
+    href: "/services/plagiarism-checking",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Advanced plagiarism detection to guarantee originality in your work.",
   },
 ]
 
@@ -59,30 +60,9 @@ export function NavMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className=" bg-inherit font text-sm ">Home</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mt-4 mb-2 text-sm">
-                      shadcn/ui
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components built with Tailwind CSS.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
+              <ListItem href="/" title="Home">
+                Go to Scriptly's homepage for an overview of our platform and services.
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -105,7 +85,7 @@ export function NavMenu() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + ' text-base bg-inherit font text-sm'}>
-            <Link href="/docs">About us</Link>
+            <Link href="/about">About us</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -114,26 +94,18 @@ export function NavMenu() {
             <ul className="grid w-[300px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Components</div>
+                  <Link href="/resources">
+                    <div className="font-medium">Resources</div>
                     <div className="text-muted-foreground">
-                      Browse all components in the library.
+                      Access helpful guides, tools, and academic resources.
                     </div>
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Documention</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/blog">
                     <div className="font-medium">Blog</div>
                     <div className="text-muted-foreground">
-                      Read our latest blog posts.
+                      Read our latest blog posts and academic tips.
                     </div>
                   </Link>
                 </NavigationMenuLink>
@@ -147,13 +119,10 @@ export function NavMenu() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#">Components</Link>
+                  <Link href="/writers">Meet Our Writers</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">Documentation</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Blocks</Link>
+                  <Link href="/writers/apply">Become a Writer</Link>
                 </NavigationMenuLink>
               </li>
             </ul>

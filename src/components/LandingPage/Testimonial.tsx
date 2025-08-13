@@ -26,7 +26,24 @@ const testimonials: Testimonial[] = [
     author: 'Ingrid De Clercq',
     position: 'Chief People Officer at Deliverect',
   },
-  // add more testimonials if you want
+   {
+    id: 2,
+    logo1: '/deliverect.png', 
+    logo2: '/logo2.png',
+    quote:
+      'We are always expanding. We will continue supporting customers around the world, and G-P will continue to be a valued partner as we discover new markets to grow into.',
+    author: 'Ingrid De Clercq',
+    position: 'Chief People Officer at Deliverect',
+  },
+   {
+    id: 3,
+    logo1: '/deliverect.png', 
+    logo2: '/logo2.png',
+    quote:
+      'We are always expanding. We will continue supporting customers around the world, and G-P will continue to be a valued partner as we discover new markets to grow into.',
+    author: 'Ingrid De Clercq',
+    position: 'Chief People Officer at Deliverect',
+  },
 ]
 
 type ArrowProps = {
@@ -40,7 +57,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
     type="button"
     onClick={onClick}
     aria-label="previous"
-    className="absolute left-4 md:left-8 -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
+    className="absolute left-4 md:left-8  cursor-pointer -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
   >
     <FiChevronLeft />
   </button>
@@ -51,7 +68,7 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
     type="button"
     onClick={onClick}
     aria-label="next"
-    className="absolute right-4 md:right-8 -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
+    className="absolute right-4 md:right-8 cursor-pointer  -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
   >
     <FiChevronRight />
   </button>

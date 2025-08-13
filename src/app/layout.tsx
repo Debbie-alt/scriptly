@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import 'slick-carousel/slick/slick.css'
@@ -23,11 +24,18 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar />
         <main className="">
         {children}
         </main>
         <Footer/>
+        </ThemeProvider>
       </body>
     </html>
   );
