@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface FaqItem {
   question: string;
@@ -49,11 +51,19 @@ const faqData: FaqItem[] = [
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <section className="w-full py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+    <section className="w-full py-16 bg-white" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center " data-aos="fade-left">
         {/* Left Section */}
-        <div>
+        <div data-aos="fade-right">
           <span className="text-sm uppercase bg-gray-100 px-3 py-1 rounded-full font-medium">
             FAQ
           </span>
@@ -64,7 +74,7 @@ export default function Faq() {
             Talk to us
           </button>
 
-          <div className="mt-12 relative">
+          <div className="mt-12 relative" data-aos="zoom-in">
             <div className="absolute -left-14 top-0 w-72 h-72 bg-purple-100 blur-xl opacity-80 rounded-full"></div>
             <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#0f0e47] to-[8686ac] relative z-10 "></div>
           </div>
@@ -75,6 +85,8 @@ export default function Faq() {
           {faqData.map((faq, index) => (
             <div
               key={index}
+              data-aos="fade-left"
+              data-aos-delay={index * 100} // Stagger animation
               className="bg-purple-50 rounded-xl overflow-hidden transition-all duration-300"
             >
               <button
@@ -97,7 +109,9 @@ export default function Faq() {
 
               <div
                 className={`transition-all duration-200 ease-in-out overflow-hidden ${
-                  openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-50"
+                  openIndex === index
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-50"
                 }`}
               >
                 <div className="px-4 pb-4 text-gray-600">{faq.answer}</div>

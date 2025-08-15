@@ -1,5 +1,5 @@
+import Link from "next/link";
 import {
-  FaLinkedinIn,
   FaFacebookF,
   FaXTwitter,
   FaInstagram,
@@ -26,38 +26,40 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Navigation</h4>
           <ul className="space-y-3 ">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/how-it-works" className="hover:underline">How It Works</a></li>
-            <li><a href="/services" className="hover:underline">Our Services</a></li>
-            <li><a href="/about" className="hover:underline">About Us</a></li>
-            <li><a href="/faqs" className="hover:underline">FAQs</a></li>
+            <li><Link href="/" className="hover:underline">Home</Link></li>
+            <li><Link href="/how-it-works" className="hover:underline">How It Works</Link></li>
+            <li><Link href="/services" className="hover:underline">Our Services</Link></li>
+            <li><Link href="/about" className="hover:underline">About Us</Link></li>
+            <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-3">Support</h4>
           <ul className="space-y-3 ">
-            <li><a href="/contact" className="hover:underline">Contact Us</a></li>
-            <li><a href="/pricing" className="hover:underline">Pricing</a></li>
+            <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
+            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-3">For Students</h4>
           <ul className="space-y-3 t">
-            <li><a href="/samples" className="hover:underline">Essay Samples</a></li>
-            <li><a href="/writers" className="hover:underline">Meet Our Writers</a></li>
-            <li><a href="/blog" className="hover:underline">Blog</a></li>
+            <li><Link href="/samples" className="hover:underline">Essay Samples</Link></li>
+            <li><Link href="/writers" className="hover:underline">Meet Our Writers</Link></li>
+            <li><Link href="/blog" className="hover:underline">Blog</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-3">Stay Connected</h4>
           <div className="flex items-center gap-7 mb-7">
-            <a href="#" aria-label="LinkedIn"><FaLinkedinIn className="text-[#0e76a8] text-2xl hover:scale-110 transition" /></a>
-            <a href="#" aria-label="Facebook"><FaFacebookF className="text-[#1877f3] text-2xl hover:scale-110 transition" /></a>
+            <a href="#" aria-label="LinkedIn">
+              <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" className="w-7 h-7 hover:scale-110 transition" />
+            </a>
+            <a href="#" aria-label="Facebook"><img src='https://img.icons8.com/?size=35&id=118495&format=png&color=000000'/></a>
             <a href="#" aria-label="Twitter"><FaXTwitter className="text-white text-2xl hover:scale-110 transition" /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram className="text-[#e1306c]  text-2xl hover:scale-110 transition" /></a>
+            <a href="#" aria-label="Instagram"><img src='https://img.icons8.com/?size=35&id=Xy10Jcu1L2Su&format=png&color=000000'/></a>
           </div>
           <h4 className="font-medium  mb-6">Contact Info</h4>
           <p className="mb-1">Email: support@essaypro.com</p>
@@ -67,18 +69,18 @@ const Footer = () => {
         <div >
           <h4 className="font-semibold text-white mb-2">Legal</h4>
           <ul className="space-y-3">
-            <li><a href="/privacy-policy" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="/terms-of-use" className="hover:underline">Terms of Use</a></li>
-            <li><a href="/refund-policy" className="hover:underline">Refund Policy</a></li>
+            <li><Link href="/privacypolicy" className="hover:underline">Privacy Policy</Link></li>
+            <li><Link href="/terms-of-use" className="hover:underline">Terms of Use</Link></li>
+            <li><Link href="/refund-policy" className="hover:underline">Refund Policy</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-white mb-2">Quick Links</h4>
           <ul className="space-y-3">
-            <li><a href="/order" className="hover:underline">Place an Order</a></li>
-            <li><a href="/login" className="hover:underline">Login</a></li>
-            <li><a href="/signup" className="hover:underline">Sign Up</a></li>
+            <li><Link href="/order" className="hover:underline">Place an Order</Link></li>
+            <li><Link href="/login" className="hover:underline">Login</Link></li>
+            <li><Link href="/signup" className="hover:underline">Sign Up</Link></li>
           </ul>
         </div>
       </div>

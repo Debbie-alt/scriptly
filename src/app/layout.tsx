@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import {ModeToggle} from "@/components/ui/modeToggle";
 
 
 
@@ -35,6 +36,10 @@ export default function RootLayout({
         {children}
         </main>
         <Footer/>
+        {/* Floating ModeToggle in bottom right */}
+        <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}>
+          <ModeToggle />
+        </div>
         </ThemeProvider>
       </body>
     </html>

@@ -1,9 +1,15 @@
+import Hero from '@/components/Writers/Hero'
+import Writers from '@/components/Writers/Writers'
 import React from 'react'
 
-const page = () => {
+
+const OurWriters = () => {
   return (
-    <div>page</div>
+    <>
+   <Hero/>
+   <Writers/>
+    </>
   )
 }
 
-export default page
+export default OurWriters

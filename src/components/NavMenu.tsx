@@ -58,17 +58,12 @@ export function NavMenu() {
     <NavigationMenu viewport={false} className="z-20">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className=" bg-inherit font text-sm ">Home</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
-              <ListItem href="/" title="Home">
-                Go to Scriptly's homepage for an overview of our platform and services.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
+          <NavigationMenuLink asChild className="bg-inherit font text-sm hover:bg-transparent hover:text-black dark:text-white dark:hover:text-purple-300">
+            <Link href="/">Home</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-base bg-inherit font text-sm">Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-base bg-inherit font text-sm dark:text-white dark:hover:text-purple-300">Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -84,12 +79,12 @@ export function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + ' text-base bg-inherit font text-sm'}>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + ' text-base bg-inherit font text-sm dark:text-white dark:hover:text-purple-300'}>
             <Link href="/about">About us</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-base bg-inherit font text-sm">Resources</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-base bg-inherit font text-sm dark:text-white dark:hover:text-purple-300">Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[300px] gap-4">
               <li>
@@ -114,7 +109,7 @@ export function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-base bg-inherit font text-sm">Writers</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-base bg-inherit font text-sm dark:text-white dark:hover:text-purple-300">Writers</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
