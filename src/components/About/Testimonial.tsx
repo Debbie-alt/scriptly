@@ -58,12 +58,15 @@ const settings = {
 
 const TestimonialCarousel = () => {
   return (
-    <section className="bg-[#111111] py-16 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative bg-[#111111] py-16 px-4 overflow-hidden">
+      {/* Glassmorph gradient blob */}
+      <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" />
+      <div className="max-w-4xl mx-auto relative z-10">
         <Slider {...settings}>
           {testimonials.map((t, idx) => (
             <div key={idx} className="px-2">
-              <div className="glassmorph-card bg-white/60 dark:bg-[#18113a]/70 backdrop-blur-lg border border-white/40 dark:border-purple-900/40 text-[#0f0e47] dark:text-purple-100 rounded-2xl shadow-xl p-6 md:p-10 flex flex-col gap-6 transition-all">
+              <div className="glassmorph-card bg-white/30 dark:bg-[#18113a]/60 backdrop-blur-xl border border-white/30 dark:border-purple-900/40 text-[#0f0e47] dark:text-purple-100 rounded-2xl shadow-2xl p-6 md:p-10 flex flex-col gap-6 transition-all"
+                style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5px 8px 0 rgba(80, 0, 120, 0.10)' }}>
                 {/* Top bar */}
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3">
@@ -72,7 +75,7 @@ const TestimonialCarousel = () => {
                       alt={t.name}
                       width={50}
                       height={50}
-                      className="rounded-full object-cover"
+                      className="rounded-full object-cover border-2 border-white/60 shadow-md"
                     />
                     <div>
                       <h4 className="font-semibold text-lg">{t.name}</h4>
