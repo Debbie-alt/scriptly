@@ -28,7 +28,14 @@ body {
 
 }
 
-
+.about-text {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.about-text i {
+  font-family: cursive;
+}
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

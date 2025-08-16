@@ -1,3 +1,4 @@
+'use client'
 import Hero from '@/components/Writers/Hero'
 import Writers from '@/components/Writers/Writers'
 import React from 'react'
