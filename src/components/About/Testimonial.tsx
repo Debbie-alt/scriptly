@@ -59,14 +59,22 @@ const settings = {
 const TestimonialCarousel = () => {
   return (
     <section className="relative bg-[#111111] py-16 px-4 overflow-hidden">
-      {/* Glassmorph gradient blob */}
-      <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" />
+ 6 by7  bbbbbbbb      <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" />
       <div className="max-w-4xl mx-auto relative z-10">
         <Slider {...settings}>
           {testimonials.map((t, idx) => (
             <div key={idx} className="px-2">
-              <div className="glassmorph-card bg-white/30 dark:bg-[#18113a]/60 backdrop-blur-xl border border-white/30 dark:border-purple-900/40 text-[#0f0e47] dark:text-purple-100 rounded-2xl shadow-2xl p-6 md:p-10 flex flex-col gap-6 transition-all"
-                style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5px 8px 0 rgba(80, 0, 120, 0.10)' }}>
+              <div className="glassmorph-card rounded-2xl shadow-2xl p-6 md:p-10 flex flex-col gap-6 transition-all text-[#0f0e47] dark:text-purple-100"
+                style={{
+                  background: 'rgba(255,255,255,0.18)',
+                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5px 8px 0 rgba(80, 0, 120, 0.10)',
+                  border: '1.5px solid rgba(255,255,255,0.35)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  borderRadius: '1.5rem',
+                  position: 'relative',
+                }}
+              >
                 {/* Top bar */}
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3">
