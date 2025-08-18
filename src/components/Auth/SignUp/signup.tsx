@@ -1,22 +1,27 @@
 "use client";
 
 import React from "react";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from '@/config/firebase.config';
 
-export default function SignIn() {
+export default function SignUp() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const auth = getAuth(app);
 
-  const handleEmailLogin = async (e: React.FormEvent) => {
+  const handleEmailSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       // Redirect or show success
     } catch (err: any) {
       setError(err.message);
@@ -25,7 +30,7 @@ export default function SignIn() {
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleSignup = async () => {
     setError("");
     setLoading(true);
     try {
@@ -71,14 +76,14 @@ export default function SignIn() {
 
         {/* Title */}
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
-          Sign in with email
+          Create your account
         </h2>
         <p className="text-center text-gray-300 text-sm mb-8">
-          Make a new doc to bring your words, data, and teams together. For free
+          Sign up to start your journey with Scriptly.
         </p>
 
         {/* Form */}
-        <form className="space-y-4" onSubmit={handleEmailLogin}>
+        <form className="space-y-4" onSubmit={handleEmailSignup}>
           <input
             type="email"
             placeholder="Email"
@@ -95,12 +100,14 @@ export default function SignIn() {
             className="w-full px-4 py-3 rounded-lg bg-white/70 border border-gray-200 
                        focus:ring-2 focus:ring-blue-400 outline-none"
           />
-          <div className="flex justify-between text-sm">
-            <span></span>
-            <a href="#" className="text-blue-400 hover:underline">
-              Forgot password?
-            </a>
-          </div>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={e => setConfirmPassword(e.target.value)}
+            className="w-full px-4 py-3 rounded-lg bg-white/70 border border-gray-200 
+                       focus:ring-2 focus:ring-blue-400 outline-none"
+          />
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
           <button
             type="submit"
@@ -108,20 +115,20 @@ export default function SignIn() {
                        text-white font-semibold hover:opacity-90 disabled:opacity-60"
             disabled={loading}
           >
-            {loading ? 'Signing in...' : 'Get Started'}
+            {loading ? 'Signing up...' : 'Sign Up'}
           </button>
         </form>
 
         {/* Divider */}
         <div className="flex items-center my-6">
           <div className="flex-1 h-px bg-gray-300" />
-          <span className="px-3 text-gray-300 text-sm">Or sign in with</span>
+          <span className="px-3 text-gray-300 text-sm">Or sign up with</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
-        {/* Social Login */}
+        {/* Social Signup */}
         <div className="flex justify-center gap-4">
-          <button type="button" onClick={handleGoogleLogin} className="bg-white/70 rounded-full p-2 hover:shadow-lg transition">
+          <button type="button" onClick={handleGoogleSignup} className="bg-white/70 rounded-full p-2 hover:shadow-lg transition">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
               alt="Google"

@@ -18,4 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const ai = getAI(app)
-const model = ai.getGenerativeModel({ model: 'gemini-pro' });
+// const model = ai.getGenerativeModel({ model: 'gemini-pro' });
+
+export { app };
