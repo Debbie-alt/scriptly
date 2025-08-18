@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
+import { ModeToggle } from "@/components/ui/modeToggle";
+import ScrollToTopButton from "@/components/ScrollButton";
 
 export const metadata: Metadata = {
   title: "Scriptly",
@@ -12,7 +14,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="antialiased">
         <ClientLayout>{children}</ClientLayout>
+        <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}>
+          <ModeToggle />
+        </div>
+        <ScrollToTopButton />
       </body>
     </html>
   );
 }
+

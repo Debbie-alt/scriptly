@@ -59,7 +59,7 @@ const settings = {
 const TestimonialCarousel = () => {
   return (
     <section className="relative bg-[#111111] py-16 px-4 overflow-hidden">
- 6 by7  bbbbbbbb      <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" />
+       {/* <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" /> */}
       <div className="max-w-4xl mx-auto relative z-10">
         <Slider {...settings}>
           {testimonials.map((t, idx) => (

@@ -14,43 +14,46 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
+const components: { title: string; href: string; }[] = [
   {
     title: "Custom Essay Writing",
     href: "/services/essay-writing",
-    description:
-      "Original, custom-written essays tailored to your requirements and academic level.",
+   
   },
   {
     title: "Assignment Help",
     href: "/services/assignment-help",
-    description:
-      "Expert assistance with assignments across all subjects and disciplines.",
   },
   {
     title: "Research Papers",
     href: "/services/research-papers",
-    description:
-      "Comprehensive research and well-structured papers for any topic or field.",
   },
   {
     title: "Editing & Proofreading",
     href: "/services/editing-proofreading",
-    description:
-      "Professional editing and proofreading to ensure clarity, accuracy, and quality.",
+    
   },
   {
     title: "Academic Consulting",
     href: "/services/academic-consulting",
-    description:
-      "Personalized academic advice and support for your educational journey.",
+    
   },
   {
     title: "Plagiarism Checking",
     href: "/services/plagiarism-checking",
-    description:
-      "Advanced plagiarism detection to guarantee originality in your work.",
-  },
+     },
+     {
+    title: "Paraphraser",
+    href: "/services/plagiarism-checking",
+     },
+       {
+    title: "Text Generator",
+    href: "/services/plagiarism-checking",
+     },
+          {
+    title: "Text Generator",
+    href: "/services/plagiarism-checking",
+     },
 ]
 
 export function NavMenu() {
@@ -65,14 +68,13 @@ export function NavMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-base bg-inherit font text-sm dark:text-white dark:hover:text-purple-300">Services</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[300px] gap-2  ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
                 >
-                  {component.description}
                 </ListItem>
               ))}
             </ul>

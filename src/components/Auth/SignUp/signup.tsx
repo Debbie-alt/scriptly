@@ -46,7 +46,7 @@ export default function SignUp() {
 
   return (
     <main
-      className="min-h-screen flex items-center justify-center 
+      className="min-h-screen py-20 flex items-center justify-center 
                  bg-[url('/skypic1.jpg')] bg-cover bg-center"
     >
       {/* Login Card */}
