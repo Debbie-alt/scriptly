@@ -17,38 +17,38 @@ import {
 const components: { title: string; href: string; }[] = [
   {
     title: "Custom Essay Writing",
-    href: "/services/essay-writing",
+    href: "/essay-writing",
    
   },
   {
     title: "Assignment Help",
-    href: "/services/assignment-help",
+    href: "/assignment-help",
   },
   {
     title: "Research Papers",
-    href: "/services/research-papers",
+    href: "/research-papers",
   },
   {
     title: "Editing & Proofreading",
-    href: "/services/editing-proofreading",
+    href: "/editing-proofreading",
     
   },
   {
     title: "Academic Consulting",
-    href: "/services/academic-consulting",
+    href: "/academic-consulting",
     
   },
   {
     title: "Plagiarism Checking",
-    href: "/services/plagiarism-checking",
+    href: "/plagiarism-checking",
      },
      {
     title: "Paraphraser",
-    href: "/services/plagiarism-checking",
+    href: "/sparaphraser",
      },
        {
     title: "Text Generator",
-    href: "/services/plagiarism-checking",
+    href: "/generate-text",
      },
           {
     title: "Text Generator",

@@ -1,9 +1,11 @@
-import React from 'react'
+import Hero from "@/components/faq/FaqHero";
+import FaqGrid from "@/components/faq/FaqGrid";
 
-const page = () => {
+export default function FaqPage() {
   return (
-    <div>page</div>
-  )
+    <>
+      <Hero />
+      <FaqGrid />
+    </>
+  );
 }
-
-export default page
