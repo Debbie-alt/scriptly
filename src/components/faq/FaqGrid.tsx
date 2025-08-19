@@ -48,10 +48,10 @@ const FaqGrid = () => {
     <section className="py-24 px-6 relative overflow-hidden " style={{ minHeight: '60vh' }}>
       {/* Gradient blobs */}
       <div className="absolute -top-10 -left-10 w-72 h-72 bg-gradient-to-br from-[#505081] via-[#0f0e47] to-transparent rounded-full blur-3xl opacity-60 z-0" />
-      {/* <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-purple-900 via-purple-600 to-transparent rounded-full blur-2xl opacity-50 z-0" /> */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-purple-900 via-transparent to-transparent rounded-full blur-2xl opacity-50 z-0" />
       <div className="max-w-6xl mx-auto grid grid-cols-1 items-stretch sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {faqItems.map((item, index) => (
-          <FaqCard key={index} {...item} iconColor="#3b2e7e" />
+          <FaqCard key={index} {...item} iconColor="#111111" />
         ))}
       </div>
     </section>
