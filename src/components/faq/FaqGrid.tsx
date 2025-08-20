@@ -10,37 +10,37 @@ const FaqGrid = () => {
       title: "How Scriptly Works",
       description: "Step-by-step guide to ordering essays and assignments.",
       icon: FaBookOpen,
-      link: "/faq/how-it-works",
+      link: "/faqs/how-it-works",
     },
     {
       title: "Using AI Tools",
       description: "How to use our AI-powered writing and research tools.",
       icon: FaRobot,
-      link: "/faq/ai-tools",
+      link: "/faqs/ai-tools",
     },
     {
       title: "Free vs Paid Features",
       description: "What tools and services are free, and what are premium?",
       icon: FaRegLightbulb,
-      link: "/faq/free-vs-paid",
+      link: "/faqs/free-vs-paid",
     },
     {
       title: "Academic Integrity",
       description: "How we ensure originality and avoid plagiarism.",
       icon: FaRegFileAlt,
-      link: "/faq/integrity",
+      link: "/faqs/integrity",
     },
     {
       title: "Meet Our Writers",
       description: "Learn about our expert writers and their qualifications.",
       icon: FaUserGraduate,
-      link: "/faq/writers",
+      link: "/faqs/writers",
     },
     {
       title: "Support & Troubleshooting",
       description: "Get help with your orders, tools, or account.",
       icon: FaLifeRing,
-      link: "/faq/support",
+      link: "/faqs/support",
     },
   ];
 

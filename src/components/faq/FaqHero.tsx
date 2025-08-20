@@ -5,7 +5,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-      className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 px-6  flex flex-col justify-center mt-10 text-center h-[60vH] relative"
+      className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-26 px-6  flex flex-col justify-center  text-center h-[60vH] relative"
       style={{ backgroundImage: "url('skypic3.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="bg-black/40 absolute inset-0"></div>
