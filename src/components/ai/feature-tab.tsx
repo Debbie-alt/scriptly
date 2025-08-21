@@ -10,7 +10,7 @@ const features = [
   {
     label: "Text Generator",
     icon: <FaMagic />,
-    href: "/text-generator",
+    href: "/generate-text",
   },
   {
     label: "Text Summarizer",
@@ -20,7 +20,7 @@ const features = [
   {
     label: "Paraphraser",
     icon: <FaSyncAlt />,
-    href: "/paraphrasing",
+    href: "/paraphraser",
   },
   {
     label: "AI Detector",
@@ -38,7 +38,7 @@ const AiFeatureTabs = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-wrap gap-4 justify-center mb-10">
+    <nav className="flex flex-wrap gap-4 justify-center py-6 bg-black" >
       {features.map((feature) => {
         const isActive = pathname === feature.href;
         return (
