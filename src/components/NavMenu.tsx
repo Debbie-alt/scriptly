@@ -43,16 +43,16 @@ const components: { title: string; href: string; }[] = [
     href: "/plagiarism-checking",
      },
      {
-    title: "Paraphraser",
-    href: "/sparaphraser",
+    title: "Paraphraser/ Summarizer",
+    href: "/paraphraser",
      },
        {
     title: "Text Generator",
     href: "/generate-text",
      },
           {
-    title: "Text Generator",
-    href: "/services/plagiarism-checking",
+    title: "Text to Speech",
+    href: "/services/ptext-to-speech",
      },
 ]
 

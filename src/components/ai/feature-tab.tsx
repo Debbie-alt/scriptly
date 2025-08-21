@@ -1,0 +1,68 @@
+'use client';
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FaMagic, FaRegLightbulb, FaSyncAlt } from "react-icons/fa";
+import { MdSummarize } from "react-icons/md";
+import { TbTextRecognition } from "react-icons/tb";
+
+const features = [
+  {
+    label: "Text Generator",
+    icon: <FaMagic />,
+    href: "/text-generator",
+  },
+  {
+    label: "Text Summarizer",
+    icon: <MdSummarize />,
+    href: "/text-summarizer",
+  },
+  {
+    label: "Paraphraser",
+    icon: <FaSyncAlt />,
+    href: "/paraphrasing",
+  },
+  {
+    label: "AI Detector",
+    icon: <TbTextRecognition />,
+    href: "/ai-detector",
+  },
+  {
+    label: "Idea Generator",
+    icon: <FaRegLightbulb />,
+    href: "/idea-generator",
+  },
+];
+
+const AiFeatureTabs = () => {
+  const pathname = usePathname();
+
+  return (
+    <nav className="flex flex-wrap gap-4 justify-center mb-10">
+      {features.map((feature) => {
+        const isActive = pathname === feature.href;
+        return (
+          <Link
+            key={feature.href}
+            href={feature.href}
+            className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold shadow transition-all
+              ${isActive
+                ? "bg-gradient-to-r from-[#0f0e47] via-[#4b206b] to-[#0f0e47] text-white scale-105"
+                : "bg-white dark:bg-[#181820] text-[#18113a] dark:text-white hover:bg-purple-50 dark:hover:bg-[#232347] hover:scale-105"
+              }`}
+            style={{
+              border: isActive ? "2px solid #6d28d9" : "1.5px solid #e5e7eb",
+              minWidth: 150,
+              justifyContent: "center",
+            }}
+          >
+            <span className="text-lg">{feature.icon}</span>
+            {feature.label}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
+
+export default AiFeatureTabs;

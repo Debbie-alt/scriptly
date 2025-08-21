@@ -11,6 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@genkit-ai/ai": "^1.16.1",
+    "@genkit-ai/firebase": "^1.16.1",
     "@mui/material": "^7.2.0",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "aos": "^2.3.4",

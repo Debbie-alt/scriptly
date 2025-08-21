@@ -2,7 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFunctions } from 'firebase/functions'; // Potentially needed for some backend setups, but not directly for client-side Gemini via AI Logic
-import { getAI } from 'firebase/ai'; 
+import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai"
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBDFmnJkzsi3l5a0wVE8hyuId67JBLpJKE",
@@ -14,10 +15,29 @@ const firebaseConfig = {
   measurementId: "G-908XX48KTG"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const ai = getAI(app)
-// const model = ai.getGenerativeModel({ model: 'gemini-pro' });
+// const analytics = getAnalytics(app);
+
+// Initialize the Gemini Developer API backend service
+const ai = getAI(app, { backend: new GoogleAIBackend() });
+
+// Create a `GenerativeModel` instance with a model that supports your use case
+export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
+
+
+
+
+async function run() {
+  const prompt = "Write a story about a magic backpack."
+
+  const result = await model.generateContent(prompt);
+
+  const response = result.response;
+  const text = response.text();
+  console.log(text);
+}
+
+run();
+
 
 export { app };
