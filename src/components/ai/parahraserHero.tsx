@@ -65,7 +65,7 @@ const TextSummarizerHero = () => {
       {/* Title + tagline */}
       <h1 className="relative text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg z-10 text-gray-900 dark:text-white">
         Summarize Anything{" "}
-        <span className="text-[#6d28d9] dark:text-purple-300">in Seconds</span>
+        <span className=" dark:text-yellow-400/70 dark:text-purple-00">in Seconds</span>
       </h1>
       <p className="relative max-w-2xl mx-auto text-lg md:text-xl opacity-90 mb-10 z-10 text-gray-700 dark:text-gray-200">
         Paste your text below and let Scriptly’s AI generate a concise,
@@ -92,7 +92,7 @@ const TextSummarizerHero = () => {
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="mt-4 px-6 py-3 rounded-xl bg-[#0f0e47] text-white hover:brightness-110 transition font-semibold shadow-md"
+            className="mt-4 px-6 py-3 rounded-xl bg-[#0f0e47] dark:bg-yellow-500/70 text-white hover:brightness-110 transition font-semibold shadow-md"
           >
             {loading ? "Summarizing..." : "Summarize"}
           </button>

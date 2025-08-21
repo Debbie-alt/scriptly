@@ -26,7 +26,7 @@ const SummarizerShowcase = () => {
   };
 
   return (
-    <section className="w-full py-20 px-6 bg-gradient-to-br from-[#1a103d] via-[#24124d] to-[#0b081d] text-white">
+    <section className="w-full py-20 px-6 bg-gradient-to-br from-[#1a103d] via- to-[#0b081d] text-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Summarizer Tool */}
         <div className="relative bg-white/10 backdrop-blur-xl border border-purple-500/20 rounded-3xl shadow-2xl p-8 space-y-6">
@@ -82,9 +82,9 @@ const SummarizerShowcase = () => {
             <a
               href="/register"
               className="w-full block text-center px-6 py-3 rounded-full
-              bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600
+              bg-yellow-500/70
               text-white font-semibold shadow-lg 
-              hover:shadow-purple-400/40 hover:scale-[1.02] active:scale-[0.98]
+            hover:scale-[1.02] active:scale-[0.98]
               transition-all duration-300"
             >
               🚀 Get full features
@@ -99,7 +99,7 @@ const SummarizerShowcase = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400"
+            bg-gradient-to-r from-purple-400 via-white to-blue-400"
           >
             Write Smarter. Save Time.
           </motion.h2>
@@ -123,7 +123,7 @@ const SummarizerShowcase = () => {
                 duration: 6,
                 ease: "linear",
               }}
-              className="flex flex-col space-y-2 text-xl font-semibold text-purple-300"
+              className="flex flex-col space-y-2 text-xl font-semibold"
             >
               <span>✨ Summarize instantly</span>
               <span>⚡ Save hours of work</span>
