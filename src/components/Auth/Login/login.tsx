@@ -3,6 +3,7 @@
 import React from "react";
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from '@/config/firebase.config';
+import Link from "next/link";
 
 export default function SignIn() {
   const [email, setEmail] = React.useState("");
@@ -97,9 +98,9 @@ export default function SignIn() {
           />
           <div className="flex justify-between text-sm">
             <span></span>
-            <a href="#" className="text-blue-400 hover:underline">
-              Forgot password?
-            </a>
+            <Link href="/register" className="text-blue-400 hover:underline">
+              Register
+            </Link>
           </div>
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
           <button

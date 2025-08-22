@@ -10,7 +10,7 @@ const features = [
   {
     label: "Text Generator",
     icon: <FaMagic />,
-    href: "/generate-text",
+    href: "/text-generator",
   },
   {
     label: "Text Summarizer",
@@ -45,7 +45,7 @@ const AiFeatureTabs = () => {
           <Link
             key={feature.href}
             href={feature.href}
-            className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold shadow transition-all
+            className={`flex items-center gap-2 px-5 py-2 rounded-full   shadow transition-all
               ${isActive
                 ? "bg-gradient-to-r from-[#0f0e47] via-[#4b206b] to-[#0f0e47] text-white scale-105"
                 : "bg-white dark:bg-[#181820] text-[#18113a] dark:text-white hover:bg-purple-50 dark:hover:bg-[#232347] hover:scale-105"
@@ -54,9 +54,10 @@ const AiFeatureTabs = () => {
               border: isActive ? "2px solid #6d28d9" : "1.5px solid #e5e7eb",
               minWidth: 150,
               justifyContent: "center",
+              fontSize:16,
             }}
           >
-            <span className="text-lg">{feature.icon}</span>
+            <span className="  2xl:text-lg">{feature.icon}</span>
             {feature.label}
           </Link>
         );

@@ -30,7 +30,7 @@ const components: { title: string; href: string; }[] = [
   },
   {
     title: "Editing & Proofreading",
-    href: "/editing-proofreading",
+    href: "/proofreading",
     
   },
   {
@@ -48,7 +48,7 @@ const components: { title: string; href: string; }[] = [
      },
        {
     title: "Text Generator",
-    href: "/generate-text",
+    href: "/text-generator",
      },
           {
     title: "Text to Speech",
