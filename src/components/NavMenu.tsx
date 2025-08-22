@@ -20,10 +20,7 @@ const components: { title: string; href: string; }[] = [
     href: "/essay-writing",
    
   },
-  {
-    title: "Assignment Help",
-    href: "/assignment-help",
-  },
+ 
   {
     title: "Research Papers",
     href: "/research-papers",

@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFunctions } from 'firebase/functions'; // Potentially needed for some backend setups, but not directly for client-side Gemini via AI Logic
 import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai"
+
 
 
 const firebaseConfig = {

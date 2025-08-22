@@ -13,9 +13,9 @@ const features = [
     href: "/text-generator",
   },
   {
-    label: "Text Summarizer",
+    label: "Proofreader",
     icon: <MdSummarize />,
-    href: "/text-summarizer",
+    href: "/proofreading",
   },
   {
     label: "Paraphraser",
@@ -23,12 +23,12 @@ const features = [
     href: "/paraphraser",
   },
   {
-    label: "AI Detector",
+    label: "Plagiarism Checker",
     icon: <TbTextRecognition />,
     href: "/ai-detector",
   },
   {
-    label: "Idea Generator",
+    label: "Text To Speech",
     icon: <FaRegLightbulb />,
     href: "/idea-generator",
   },
