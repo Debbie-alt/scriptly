@@ -99,7 +99,7 @@ const SummarizerShowcase = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-r from-purple-400 via-white to-blue-400"
+            bg-gradient-to-br from-white to-yellow-600"
           >
             Write Smarter. Save Time.
           </motion.h2>

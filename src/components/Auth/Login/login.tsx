@@ -46,7 +46,7 @@ export default function SignIn() {
     >
       {/* Login Card */}
       <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl 
-                      bg-white/30 backdrop-blur-lg border border-white/40">
+                      bg-white backdrop-blur-lg border border-white/40">
         
         {/* Icon */}
         <div className="flex justify-center mb-6">
@@ -73,7 +73,7 @@ export default function SignIn() {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Sign in with email
         </h2>
-        <p className="text-center text-gray-300 text-sm mb-8">
+        <p className="text-center text-gray-800 text-sm mb-8">
           Make a new doc to bring your words, data, and teams together. For free
         </p>
 
@@ -115,7 +115,7 @@ export default function SignIn() {
         {/* Divider */}
         <div className="flex items-center my-6">
           <div className="flex-1 h-px bg-gray-300" />
-          <span className="px-3 text-gray-300 text-sm">Or sign in with</span>
+          <span className="px-3 text-gray-700 text-sm">Or sign in with</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 

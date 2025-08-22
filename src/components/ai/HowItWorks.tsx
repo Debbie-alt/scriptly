@@ -6,23 +6,23 @@ import { CheckCircle, FileText, Edit3 } from "lucide-react";
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <FileText className="w-10 h-10 text-purple-700" />,
+      icon: <FileText className="w-8 h-8 text-purple-700" />,
       title: "Type or Paste",
       description: "Drop in your text or paste from anywhere. No formatting needed.",
     },
     {
-      icon: <CheckCircle className="w-10 h-10 text-purple-700" />,
+      icon: <CheckCircle className="w-8 h-8 text-yellow-700/70" />,
       title: "AI Summarizes",
       description: "Scriptly’s AI instantly condenses your content into clear, concise ideas.",
     },
     {
-      icon: <Edit3 className="w-10 h-10 text-purple-700" />,
+      icon: <Edit3 className="w-6 h-6 text-purple-700" />,
       title: "Refine & Export",
       description: "Make adjustments, copy results, or download for later use.",
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -30,16 +30,17 @@ const HowItWorks = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: any = {
     hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+         
 
   return (
-    <section className="relative w-full py-20 px-6 bg-gradient-to-b from-purple-50 to-purple-100 dark:from-[#141021] dark:to-[#0f0e47]">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full py-20 px-6 bg-white dark:from-[#141021] dark:to-[#0f0e47]">
+      <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
-        {/* LEFT SIDE - Image / Illustration */}
+        {/* LEFT SIDE - Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -47,11 +48,14 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <img
-            src="https://illustrations.popsy.co/violet/reading.svg" 
-            alt="AI summarizer illustration"
-            className="w-full max-w-md drop-shadow-xl"
-          />
+          <motion.img
+ src="/ai_illustratiom.png"
+   alt="AI summarizer illustration"
+  className="w-full max-w-md drop-shadow-xl"
+  animate={{ y: [0, -10, 0] }}
+  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+/>
+
         </motion.div>
 
         {/* RIGHT SIDE - Steps */}
@@ -62,7 +66,7 @@ const HowItWorks = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white text-center md:text-left">
-            How It <span className="text-purple-700">Works</span>
+            How It <span className="text-[#272757]/70">Works</span>
           </h2>
 
           <p className="max-w-xl text-lg text-gray-700 dark:text-gray-300 mb-12 text-center md:text-left">
@@ -76,13 +80,13 @@ const HowItWorks = () => {
             viewport={{ once: true }}
             className="grid gap-8"
           >
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                // variants={cardVariants}
-                className="flex items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-6 border border-purple-200/40 dark:border-purple-800"
-              >
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+       {steps.map((step, index) => (
+         <motion.div
+          key={index}
+           variants={cardVariants}
+            className="flex items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-6 border border-purple-200/40 dark:border-purple-800">
+           <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex
+                 items-center justify-center`} >
                   {step.icon}
                 </div>
                 <div>

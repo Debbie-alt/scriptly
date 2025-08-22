@@ -6,7 +6,7 @@ import AiFeatureTabs from '@/components/ai/feature-tab';
 import Faq from '@/components/LandingPage/Faq';
 import TextSummarizerHero from '@/components/ai/parahraserHero';
 import SummarizerShowcase from '../text-summarizer/MainContent';
-import HowItWorks from '../faq/how-it-works/page';
+import HowItWorks from '@/components/ai/HowItWorks';
 
 const TextSummarizerPage = () => {
   const [input, setInput] = useState('');

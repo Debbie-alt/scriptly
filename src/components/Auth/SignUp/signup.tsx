@@ -1,8 +1,15 @@
 "use client";
 
 import React from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { app } from '@/config/firebase.config';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  AuthError,
+} from "firebase/auth";
+import { app } from "@/config/firebase.config";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
   const [email, setEmail] = React.useState("");
@@ -11,20 +18,41 @@ export default function SignUp() {
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const auth = getAuth(app);
+  const router = useRouter();
+
+  // Map Firebase error codes to friendly text
+  const getErrorMessage = (error: AuthError) => {
+    switch (error.code) {
+      case "auth/invalid-email":
+        return "Please enter a valid email address.";
+      case "auth/email-already-in-use":
+        return "This email is already registered. Try logging in.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters.";
+      case "auth/popup-closed-by-user":
+        return "Google sign-in was cancelled.";
+      case "auth/network-request-failed":
+        return "Network error. Please check your internet connection.";
+      default:
+        return "Something went wrong. Please try again.";
+    }
+  };
 
   const handleEmailSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
+
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      // Redirect or show success
+      router.push("/"); // redirect on success
     } catch (err: any) {
-      setError(err.message);
+      setError(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -36,9 +64,9 @@ export default function SignUp() {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      // Redirect or show success
+      router.push("/");
     } catch (err: any) {
-      setError(err.message);
+      setError(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -47,13 +75,11 @@ export default function SignUp() {
   return (
     <main
       className="min-h-screen py-20 flex items-center justify-center 
-                 bg-[url('/skypic1.jpg')] bg-cover bg-center"
+      bg-[url('/skypic1.jpg')] bg-cover bg-center"
     >
-      {/* Login Card */}
       <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl 
-                      bg-white/30 backdrop-blur-lg border border-white/40">
+                      bg-white/20 backdrop-blur-lg border border-white/40">
         
-        {/* Icon */}
         <div className="flex justify-center mb-6">
           <div className="w-14 h-14 rounded-full flex items-center justify-center 
                           bg-white/40 backdrop-blur-md">
@@ -74,7 +100,6 @@ export default function SignUp() {
           </div>
         </div>
 
-        {/* Title */}
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Create your account
         </h2>
@@ -82,7 +107,6 @@ export default function SignUp() {
           Sign up to start your journey with Scriptly.
         </p>
 
-        {/* Form */}
         <form className="space-y-4" onSubmit={handleEmailSignup}>
           <input
             type="email"
@@ -108,31 +132,40 @@ export default function SignUp() {
             className="w-full px-4 py-3 rounded-lg bg-white/70 border border-gray-200 
                        focus:ring-2 focus:ring-blue-400 outline-none"
           />
-          {error && <div className="text-red-500 text-sm text-center">{error}</div>}
+
+          {/* Error message */}
+          {error && (
+            <div className="p-2 rounded-lg bg-red-100 text-red-600 text-sm text-center">
+              {error}
+            </div>
+          )}
+
           <button
             type="submit"
             className="w-full py-3 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 
                        text-white font-semibold hover:opacity-90 disabled:opacity-60"
             disabled={loading}
           >
-            {loading ? 'Signing up...' : 'Sign Up'}
+            {loading ? "Signing up..." : "Sign Up"}
           </button>
         </form>
 
-        {/* Divider */}
         <div className="flex items-center my-6">
           <div className="flex-1 h-px bg-gray-300" />
           <span className="px-3 text-gray-300 text-sm">Or sign up with</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
-        {/* Social Signup */}
         <div className="flex justify-center gap-4">
-          <button type="button" onClick={handleGoogleSignup} className="bg-white/70 rounded-full p-2 hover:shadow-lg transition">
+          <button
+            type="button"
+            onClick={handleGoogleSignup}
+            className="bg-white/70 rounded-full p-2 hover:shadow-lg transition"
+          >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
               alt="Google"
-              className="w-8 h-8"
+              className="w-5 h-5"
               loading="eager"
             />
           </button>
