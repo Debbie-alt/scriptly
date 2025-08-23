@@ -18,13 +18,10 @@ const useCases = [
 const TextGeneratorCTA = () => {
   return (
     <div className="relative bg-white py-10 border-b border-gray-200 overflow-hidden">
-      {/* Radial Gradient */}
-      <div className="pointer-events-none absolute -bottom-20 -right-40 w-[500px] h-[500px] rounded-full 
-                      bg-[radial-gradient(circle_at_center,_rgba(39,39,87,0.4),_transparent_70%)]" />
+      <div className="pointer-events-none absolute -bottom-20 -right-40 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(39,39,87,0.4),_transparent_70%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        
-        {/* Left: Text + Carousel */}
+
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -43,9 +40,7 @@ const TextGeneratorCTA = () => {
             See what you can create in seconds.
           </p>
 
-          {/* Vertical Carousel */}
           <div className="relative h-24 overflow-hidden">
-            {/* Custom scrollbar */}
             <div className="absolute right-0 top-0 h-full w-1 bg-purple-200 rounded-full overflow-hidden">
               <motion.div
                 animate={{ y: ["0%", "100%"] }}
@@ -86,7 +81,7 @@ const TextGeneratorCTA = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center"
         >
-          <div className="relative w-90 h-74">
+          <div className="relative w-90 h-74 animate-pulse">
             <Image
               src="/chat-with-ai.svg" 
               alt="AI writing illustration"

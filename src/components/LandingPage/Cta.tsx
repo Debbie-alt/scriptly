@@ -34,7 +34,7 @@ const Cta = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex justify-center gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-md font-semibold border border-gray-800">
             Start for free →
           </button>

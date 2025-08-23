@@ -30,7 +30,7 @@ const TextSummarizerPage = () => {
   };
 
   return (
-    <div className="min-h-screen dark:bg-[#111111]  py-18">
+    <div className="min-h-screen dark:bg-[#111111]  pt-18">
       <AiFeatureTabs />
       <TextSummarizerHero/>
       {/* AI Feature Tabs */}

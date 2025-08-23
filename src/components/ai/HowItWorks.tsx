@@ -6,12 +6,12 @@ import { CheckCircle, FileText, Edit3 } from "lucide-react";
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <FileText className="w-8 h-8 text-purple-700" />,
+      icon: <FileText className="w-6 h-6 text-purple-700" />,
       title: "Type or Paste",
       description: "Drop in your text or paste from anywhere. No formatting needed.",
     },
     {
-      icon: <CheckCircle className="w-8 h-8 text-yellow-700/70" />,
+      icon: <CheckCircle className="w-6 h-6 text-yellow-700/70" />,
       title: "AI Summarizes",
       description: "Scriptly’s AI instantly condenses your content into clear, concise ideas.",
     },
@@ -49,7 +49,7 @@ const HowItWorks = () => {
           className="flex justify-center"
         >
           <motion.img
- src="/ai_illustratiom.png"
+ src="/chat-with-ai.svg"
    alt="AI summarizer illustration"
   className="w-full max-w-md drop-shadow-xl"
   animate={{ y: [0, -10, 0] }}
@@ -65,7 +65,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white text-center md:text-left">
             How It <span className="text-[#272757]/70">Works</span>
           </h2>
 
@@ -84,16 +84,16 @@ const HowItWorks = () => {
          <motion.div
           key={index}
            variants={cardVariants}
-            className="flex items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-6 border border-purple-200/40 dark:border-purple-800">
-           <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex
+            className="flex w-[82%] items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-5 border border-purple-200/40 dark:border-purple-800">
+           <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-purple-50 dark:bg-purple-900 flex
                  items-center justify-center`} >
                   {step.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-LG font-medium text-gray-900 dark:text-white">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
                 </div>
               </motion.div>
             ))}

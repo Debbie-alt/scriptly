@@ -1,24 +1,20 @@
-// // functions/src/flows/chatbot.ts
-// import { defineFlow } from "@genkit-ai/flow";
-// import { gemini15Flash } from "@genkit-ai/firebase";
-// impor
+export async function getChatResponse(message: string): Promise<string> {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_FIREBASE_FUNCTIONS_URL}/chatbot`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      }
+    );
 
-// export const chatFlow = defineFlow(
-//   {
-//     name: "chatFlow",
-//     inputSchema: { message: "string" },
-//     outputSchema: { reply: "string" },
-//   },
-//   async (input) => {
-//     const response = await gemini15Flash.generate({
-//       contents: [
-//         {
-//           role: "user",
-//           parts: [{ text: input.message }],
-//         },
-//       ],
-//     });
+    if (!res.ok) throw new Error("Chatbot API call failed");
 
-//     return { reply: response.outputText ?? "No reply" };
-//   }
-// );
+    const data = await res.json();
+    return data.reply;
+  } catch (err) {
+    console.error("Chatbot error:", err);
+    return "⚠️ Sorry, something went wrong. Try again later.";
+  }
+}

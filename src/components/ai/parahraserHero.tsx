@@ -27,21 +27,21 @@ const TextSummarizerHero = () => {
   return (
     <section
       className="relative w-full min-h-[90vh] flex flex-col items-center py-16 text-center px-4 
-      bg-gradient-to-b from-white via-purple-50 to-purple-100 
+      bg-gradient-to-b from-white via-purple-50 to-purple-50 
       dark:from-[#111111] dark:via-[#14123a] dark:to-[#111111] 
       dark:text-white overflow-hidden"
     >
       {/* Background blobs */}
       <div className="pointer-events-none">
         {/* top left glow */}
-        <div
+        {/* <div
           className="absolute -top-24 left-1/4 w-72 h-72 rounded-full opacity-20 z-0"
           style={{
             background:
               "radial-gradient(circle at 50% 50%, #7c3aed 0%, transparent 70%)",
             filter: "blur(35px)",
           }}
-        />
+        /> */}
         {/* right side glow */}
         <div
           className="absolute top-1/3 right-10 w-64 h-64 rounded-full opacity-20 z-0"
@@ -63,7 +63,7 @@ const TextSummarizerHero = () => {
       </div>
 
       {/* Title + tagline */}
-      <h1 className="relative text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg z-10 text-gray-900 dark:text-white">
+      <h1 className="relative text-4xl md:text-6xl font-semibold mb-4 drop-shadow-lg z-10 text-gray-900 dark:text-white">
         Summarize Anything{" "}
         <span className=" dark:text-yellow-400/70 dark:text-purple-00">in Seconds</span>
       </h1>
@@ -83,7 +83,7 @@ const TextSummarizerHero = () => {
           <textarea
             className="w-full p-3 rounded-lg bg-white/70 dark:bg-white/5 
               text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 
-              focus:outline-none border border-gray-500 resize-none min-h-[120px]"
+              focus:outline-none border border-gray-400 resize-none min-h-[120px]"
             placeholder="Paste your text here..."
             value={input}
             onChange={(e) => setInput(e.target.value)}

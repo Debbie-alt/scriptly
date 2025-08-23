@@ -57,7 +57,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
     type="button"
     onClick={onClick}
     aria-label="previous"
-    className="absolute left-4 md:left-8  cursor-pointer -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
+    className="absolute left-4 md:left-8 cursor-pointer -bottom-6 md:-bottom-14 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-sm z-30"
   >
     <FiChevronLeft />
   </button>
@@ -88,7 +88,7 @@ const TestimonialCarousel: React.FC = () => {
   }
 
   return (
-    <section className="bg-white  mx-auto px-38 border-t border-t-gray-300 py-24">
+    <section className="bg-white  mx-auto  px-5 md:px-30 lg:px-38 border-t border-t-gray-300 py-24">
       <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-8">
         Hear from our customers
       </h3>

@@ -45,10 +45,14 @@ const carouselSettings = {
   responsive: [
     {
       breakpoint: 1024,
-      settings: { slidesToShow: 1.5 },
+      settings: { slidesToShow: 2 },
     },
     {
-      breakpoint: 640,
+      breakpoint: 768,
+      settings: { slidesToShow: 1.2 },
+    },
+    {
+      breakpoint: 480,
       settings: { slidesToShow: 1 },
     },
   ],
@@ -56,42 +60,47 @@ const carouselSettings = {
 
 const Hero = () => {
   return (
-    <section className="hero-bg-image relative py-16 min-h-screen hero-grid-ines px-4 md:px-8 lg:px-24 flex hero-s text-center relative bg-white dark:bg-[#111111]"
-    >
-      <div className="hero-bg-left inset-0 hero-bg age z-0 absolute"/>
-      <div className="w-full md:w-2/3 flex flex-col items-start">
-        <h1 className="text-black dark:text-gray-200 text-3xl md:text-5xl font-medium -translate-y-[50%] leading-tight text-center drop-shadow-lg">
+    <section className="hero-bg-image relative py-16 min-h-screen px-4 md:px-8 lg:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
+      {/* background overlay */}
+      <div className="hero-bg-left inset-0 absolute z-0" />
+
+      {/* text content */}
+      <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start relative z-10">
+        <h1 className="text-black dark:text-gray-200 text-3xl md:text-5xl font-medium leading-tight drop-shadow-lg mb-6 lg:mb-4">
           Unlock Your Brilliance. Write Your Success Story.
         </h1>
-        <p className="text-gray-700 dark:text-purple-100 font-medium -mt-8 mx-auto w-full max-w-xl text-center">
+        <p className="text-gray-700 dark:text-purple-100 font-medium mx-auto lg:mx-0 w-full max-w-xl text-sm sm:text-base mb-6">
           Need a writer? Connect instantly with top experts for any project, any time.
           cum qui delectus voluptatum ea eaque voluptate similique, laudantium nesciunt et
         </p>
-        <div className='flex gap-5 items-center mx-auto'>
-           <button className="mt-4 mb-2 px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all self-center ">
-          Hire a Writer
-        </button>
-         <button className="mt-4 mb-2 px-10 py-2 bg-transparent border border-[#a1a1e6] hover:opacity-80 text-black rounded-md shadow-lg transition-all self-center dark:text-purple-100">
-          Try it out
-        </button>
+
+        {/* buttons */}
+        <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
+          <button className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all">
+            Hire a Writer
+          </button>
+          <button className="px-8 py-2 bg-transparent border border-[#a1a1e6] hover:opacity-80 text-black rounded-md shadow-lg transition-all dark:text-purple-100">
+            Try it out
+          </button>
         </div>
-      <div className="absolute bottom-[0%] mb-6 left-0 right-0 w-[80%] mt-3 mx-auto pb-6 z-20">
-          <Slider {...carouselSettings}>
-            {carouselItems.map((item, idx) => (
-              <div key={idx} className="px-3">
-                <div className="glassmorph-card min-h-[180px] p-6 rounded-2xl shadow-2xl border border-white/40 bg-white/60 backdrop-blur-lg flex flex-col items-center justify-center transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer z-20 dark:bg-[#505081]/70 dark:border-purple-900/40 dark:shadow-purple-900/30">
-                  <div className="mb-3">{item.icon}</div>
-                  <h3 className="text-base font-bold mb-2 text-black/90 dark:text-purple-100 text-center">{item.title}</h3>
-                  <p className="text-gray-800/80 dark:text-purple-200/80 text-xs text-center leading-snug">{item.desc}</p>
-                </div>
+      </div>
+
+      {/* carousel */}
+      <div className="w-full lg:absolute lg:bottom-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-[80%] mt-10 lg:mt-0 z-20">
+        <Slider {...carouselSettings}>
+          {carouselItems.map((item, idx) => (
+            <div key={idx} className="px-3">
+              <div className="glassmorph-card min-h-[180px] p-6 rounded-2xl shadow-2xl border border-white/40 bg-white/60 backdrop-blur-lg flex flex-col items-center justify-center transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer dark:bg-[#505081]/70 dark:border-purple-900/40 dark:shadow-purple-900/30">
+                <div className="mb-3">{item.icon}</div>
+                <h3 className="text-base font-bold mb-2 text-black/90 dark:text-purple-100 text-center">{item.title}</h3>
+                <p className="text-gray-800/80 dark:text-purple-200/80 text-xs text-center leading-snug">{item.desc}</p>
               </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4 mb-10" />
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   )
 }
 
-export default Hero;
+export default Hero
