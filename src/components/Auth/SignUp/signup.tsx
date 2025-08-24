@@ -74,11 +74,8 @@ export default function SignUp() {
 
   return (
     <main
-      className="min-h-screen py-20 flex items-center justify-center 
-      bg-[url('/skypic1.jpg')] bg-cover bg-center"
-    >
-      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl 
-                      bg-white/20 backdrop-blur-lg border border-white/40">
+      className="min-h-screen py-20 p-4 flex items-center justify-center bg-[url('/skypic1.jpg')]  bg-cover bg-center">
+      <div className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl bg-white/20 backdrop-blur-lg border border-white/40">
         
         <div className="flex justify-center mb-6">
           <div className="w-14 h-14 rounded-full flex items-center justify-center 

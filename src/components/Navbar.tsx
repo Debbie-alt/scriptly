@@ -11,7 +11,6 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/40 dark:bg-black/40 backdrop-blur-md px-4 md:px-8 py-2 flex items-center justify-between z-40">
-      {/* Left: Logo + NavMenu (desktop) */}
       <div className="flex items-center gap-3">
         <img
           src="/logo2.png"
@@ -19,15 +18,12 @@ const Navbar = () => {
           className="h-12 w-12 rounded-full object-cover"
         />
 
-        {/* Desktop nav */}
         <div className="hidden md:block">
           <NavMenu />
         </div>
       </div>
 
-      {/* Right: Links */}
       <div className="flex items-center gap-3">
-        {/* Login link (desktop only) */}
         <Link
           href="/login"
           className="hidden sm:block dark:text-white text-sm font-medium"
@@ -35,11 +31,10 @@ const Navbar = () => {
           Login
         </Link>
 
-        {/* Demo button (always visible) */}
-        <Link href="/login">
+        <Link href="/login" className="hidden lg:block">
           <span className="bg-[#0f0e47] text-white px-5 sm:px-7 py-2.5 rounded-md text-sm hover:bg-[#272757]/80 transition flex items-center gap-2">
             <FiLogOut className="w-4 h-4" />
-            <span className="hidden xs:inline">Book a Demo</span>
+           Book a Demo
           </span>
         </Link>
 

@@ -88,7 +88,7 @@ const TestimonialCarousel: React.FC = () => {
   }
 
   return (
-    <section className="bg-white  mx-auto  px-5 md:px-30 lg:px-38 border-t border-t-gray-300 py-24">
+    <section className="bg-white  mx-auto  px-5  md:px-10 lg:px-30 lg:px-38 border-t border-t-gray-300 py-18 md:py-24">
       <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-8">
         Hear from our customers
       </h3>
@@ -96,7 +96,7 @@ const TestimonialCarousel: React.FC = () => {
       <div className="relative">
         <Slider {...settings}>
           {testimonials.map((t) => (
-            <div key={t.id} className="w-full  min-h-fit py-12">
+            <div key={t.id} className="w-full px-3 min-h-fit py-12">
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-20">
                 <div className="relative w-40 h-40 flex-shrink-0">
                   <div className="absolute left-0 top-0 w-40 h-40  rounded-2xl flex items-center justify-center z-20"
@@ -114,8 +114,8 @@ const TestimonialCarousel: React.FC = () => {
                 </div>
 
                 
-                <div className="md:w-2/3">
-                  <p className="text-lg md:text-2xl font-medium text-gray-800 mb-4 leading-snug">
+                <div className="md:w-2/3  mt-6 lg:mt-0">
+                  <p className="text-lg  md:text-xl lg:text-2xl font-medium text-gray-800 mb-4 leading-snug">
                     “{t.quote}”
                   </p>
                   <p className="text-sm text-gray-500">

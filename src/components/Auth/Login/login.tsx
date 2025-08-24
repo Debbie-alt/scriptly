@@ -42,17 +42,13 @@ export default function SignIn() {
 
   return (
     <main
-      className="min-h-screen flex items-center justify-center 
-                 bg-[url('/skypic1.jpg')] bg-cover bg-center"
-    >
+      className="min-h-screen flex items-center p-5 justify-center bg-[url('/skypic1.jpg')] bg-cover bg-center" >
       {/* Login Card */}
-      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl 
-                      bg-white backdrop-blur-lg border border-white/40">
+      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white backdrop-blur-lg border border-white/40">
         
         {/* Icon */}
         <div className="flex justify-center mb-6">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center 
-                          bg-white/40 backdrop-blur-md">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center bg-white/40 backdrop-blur-md">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-7 h-7 text-gray-700"

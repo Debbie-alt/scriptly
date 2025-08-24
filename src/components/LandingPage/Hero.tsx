@@ -61,12 +61,10 @@ const carouselSettings = {
 const Hero = () => {
   return (
     <section className="hero-bg-image relative py-16 min-h-screen px-4 md:px-8 lg:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
-      {/* background overlay */}
       <div className="hero-bg-left inset-0 absolute z-0" />
 
-      {/* text content */}
-      <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start relative z-10">
-        <h1 className="text-black dark:text-gray-200 text-3xl md:text-5xl font-medium leading-tight drop-shadow-lg mb-6 lg:mb-4">
+      <div className="w-full lg:w-2/3 flex flex-col items-center text-center relative z-10 mt-6 md:mt-0">
+        <h1 className="text-black dark:text-gray-200 font-semibold text-4xl md:text-5xl md:font-medium leading-tight drop-shadow-lg mb-6 lg:mb-4">
           Unlock Your Brilliance. Write Your Success Story.
         </h1>
         <p className="text-gray-700 dark:text-purple-100 font-medium mx-auto lg:mx-0 w-full max-w-xl text-sm sm:text-base mb-6">
@@ -74,7 +72,6 @@ const Hero = () => {
           cum qui delectus voluptatum ea eaque voluptate similique, laudantium nesciunt et
         </p>
 
-        {/* buttons */}
         <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
           <button className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all">
             Hire a Writer
@@ -85,7 +82,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* carousel */}
       <div className="w-full lg:absolute lg:bottom-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-[80%] mt-10 lg:mt-0 z-20">
         <Slider {...carouselSettings}>
           {carouselItems.map((item, idx) => (

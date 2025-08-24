@@ -11,11 +11,11 @@ const Cta = () => {
       }}
     >
       <div className="pointer-events-none select-none">
-        <Image src="https://img.icons8.com/color/96/open-book--v2.png" alt="Open Book" width={56} height={56} className="absolute left-[25%] top-[12%] animate-bounce" />
-        <Image src="https://img.icons8.com/color/96/paper.png" alt="Paper" width={56} height={56} className="absolute left-[18%] top-1/2 -translate-y-1/2 animate-pulse" />
-        <Image src="https://img.icons8.com/color/96/contract.png" alt="Contract" width={56} height={56} className="absolute right-[18%] top-1/2 -translate-y-1/2 animate-pulse" />
-        <Image src="https://img.icons8.com/color/96/graduation-cap.png" alt="Graduation Cap" width={56} height={56} className="absolute left-[40%] bottom-[14%] animate-bounce" />
-        <Image src="https://img.icons8.com/color/96/reading.png" alt="Reading" width={56} height={56} className="absolute right-[26%] top-[22%] animate-bounce" />
+        <Image src="https://img.icons8.com/color/96/open-book--v2.png" alt="Open Book" width={56} height={56} className="absolute lg:left-[25%] sm:left-[18%] top-[12%] animate-bounce hidden md:block" />
+        <Image src="https://img.icons8.com/color/96/paper.png" alt="Paper" width={56} height={56} className="absolute left-[18%] top-3/4 lg:top-1/2 -translate-y-1/2 animate-pulse  hidden md:block" />
+        <Image src="https://img.icons8.com/color/96/contract.png" alt="Contract" width={56} height={56} className="absolute right-[18%]  top-3/4 lg:top-1/2 -translate-y-1/2 animate-pulse  hidden md:block" />
+        <Image src="https://img.icons8.com/color/96/graduation-cap.png" alt="Graduation Cap" width={56} height={56} className="absolute left-[40%] bottom-[14%] animate-bounce  hidden mdblock" />
+        <Image src="https://img.icons8.com/color/96/reading.png" alt="Reading" width={56} height={56} className="absolute  right-[20%] lg:right-[26%] top-[18%] lg:top-[22%] animate-bounce  hidden sm:block" />
       </div>
 
       {/* Main Content */}
@@ -29,13 +29,13 @@ const Cta = () => {
           </span>{" "}
           by Professional Writers
         </h1>
-        <p className="text-lg text-gray-200">
+        <p className=" p-3 sm:text-lg text-gray-200">
           Get plagiarism-free, custom-written essays and assignments delivered on time. Trusted by students worldwide for quality, speed, and support. Let Scriptly help you succeed—stress-free!
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-md font-semibold border border-gray-800">
+        <div className="flex flex-col sm:flex-row px-5 justify-center gap-4 mt-6">
+          <button className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-md font-semibold border border-gray-800">
             Start for free →
           </button>
           <button className="bg-white hover:bg-gray-100 text-black px-6 py-2 rounded-md font-semibold">
