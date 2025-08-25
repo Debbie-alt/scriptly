@@ -21,7 +21,7 @@ const components: { title: string; href: string }[] = [
   { title: "Plagiarism Checking", href: "/plagiarism-checking" },
   { title: "Paraphraser / Summarizer", href: "/paraphraser" },
   { title: "Text Generator", href: "/text-generator" },
-  { title: "Text to Speech", href: "/services/text-to-speech" },
+  // { title: "Text to Speech", href: "/services/text-to-speech" },
 ]
 
 export function NavMenu({ mobile = false }: { mobile?: boolean }) {
@@ -143,12 +143,12 @@ export function NavMenu({ mobile = false }: { mobile?: boolean }) {
                     <div className="text-muted-foreground">Access helpful guides, tools, and academic resources.</div>
                   </Link>
                 </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="/blog">
+                {/* <NavigationMenuLink asChild> */}
+                  {/* <Link href="/blog">
                     <div className="font-medium">Blog</div>
                     <div className="text-muted-foreground">Read our latest blog posts and academic tips.</div>
                   </Link>
-                </NavigationMenuLink>
+                </NavigationMenuLink> */}
               </li>
             </ul>
           </NavigationMenuContent>
