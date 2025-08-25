@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@genkit-ai/ai": "^1.16.1",
     "@genkit-ai/firebase": "^1.16.1",
+    "@google/generative-ai": "^0.24.1",
     "@mui/material": "^7.2.0",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "aos": "^2.3.4",

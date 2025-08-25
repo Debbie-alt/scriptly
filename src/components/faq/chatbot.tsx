@@ -1,100 +1,168 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send } from "lucide-react";
-import { getChatResponse } from "@/config/chatbot"; // <-- Gemini Firebase call
+import { MessageCircle, X, SendHorizontal } from "lucide-react";
+import { getChatResponse } from "@/config/chatbot";
+import { AiFillMessage } from "react-icons/ai";
+
+
+const faqs: { q: string; a: string; keywords: string[] }[] = [
+  {
+    q: "How do I use the Summarizer?",
+    a: "Go to the Summarizer page, paste or type your text, and Scriptly will instantly generate a concise summary for you.",
+    keywords: ["summarizer", "summary", "summarize"],
+  },
+  {
+    q: "How does the Proofreader work?",
+    a: "Paste your text into the Proofreader tool and it will highlight grammar, spelling, and style improvements.",
+    keywords: ["proofreader", "proofread", "grammar", "spelling"],
+  },
+  {
+    q: "Can I convert text to speech?",
+    a: "Yes! Use the Text-to-Speech tool, paste your content, and download the audio in your preferred voice style.",
+    keywords: ["speech", "voice", "text to speech", "tts"],
+  },
+  {
+    q: "What is the Chatbot for?",
+    a: "The FAQ Chatbot helps you quickly find answers about Scriptly tools and guides you on how to use them effectively.",
+    keywords: ["chatbot", "faq", "help"],
+  },
+];
+
+
+type ChatMessage = { role: "user" | "bot"; text: string; time: string };
 
 export default function ChatbotWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: "user" | "bot"; text: string }[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // 👉 Helper for time
+  const getCurrentTime = () => {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
+
+  useEffect(() => {
+    if (open && messages.length === 0) {
+      setMessages([
+        { role: "bot", text: "👋 Hi there! How can we help you today?", time: getCurrentTime() },
+      ]);
+    }
+  }, [open]);
+
   const sendMessage = async () => {
     if (!input.trim()) return;
-    const userMsg = { role: "user" as const, text: input };
+
+    const userMsg: ChatMessage = { role: "user", text: input, time: getCurrentTime() };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setLoading(true);
 
     try {
-      const botReply = await getChatResponse(input); // 🔗 your Gemini call
-      setMessages((prev) => [...prev, { role: "bot", text: botReply }]);
+    const faqMatch = faqs.find((f) =>
+  f.keywords.some((kw) => input.toLowerCase().includes(kw))
+);
+
+let reply: string;
+if (faqMatch) {
+  reply = faqMatch.a;
+} else {
+  reply = await getChatResponse(input);
+}
+
+      const botMsg: ChatMessage = { role: "bot", text: reply, time: getCurrentTime() };
+      setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
-      setMessages((prev) => [...prev, { role: "bot", text: "⚠️ Something went wrong. Try again." }]);
+      setMessages((prev) => [
+        { role: "bot", text: "❌ Error fetching response", time: getCurrentTime() },
+      ]);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <>
-      {/* Floating button */}
+    <div className="fixed bottom-4 left-4 z-50">
+      {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 text-white shadow-lg flex items-center justify-center hover:scale-110 transition"
+        className="bg-purple-900 hover:bg-purple-950 text-white p-2 rounded-full shadow-lg"
       >
-        {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        {open ? <X className="w-6 h-6" /> : <AiFillMessage className="w-5 h-5" />}
       </button>
 
-      {/* Chat Modal */}
+      {/* Chat Window */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 30 }}
-            className="fixed bottom-24 right-6 w-80 md:w-96 h-[28rem] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
+            initial={{ opacity: 0, y: 40, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 40, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+            className="mt-3 w-fit max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="p-4 bg-gradient-to-r from-purple-700 to-purple-900 text-white font-semibold">
-              Scriptly Assistant 🤖
+            <div className="bg-black text-white px-4 py-5 flex items-center gap-3 shadow-md">
+              {/* Avatar */}
+              <img
+                src="https://i.pravatar.cc/50?img=32"
+                alt="Assistant"
+                className="w-10 h-10 rounded-full border-2 border-white"
+              />
+              {/* Text */}
+              <div className="flex flex-col">
+                <span className="font-bold text-lg">How can I help you?</span>
+                <span className="text-xs text-purple-100">
+                  Ask Zara anything about Scriptly tools 🚀
+                </span>
+              </div>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-purple-50/30">
-              {messages.map((msg, i) => (
-                <div
+            <div className="flex-1 overflow-y-auto p-3 space-y-2">
+              {messages.map((m, i) => (
+                <motion.div
                   key={i}
-                  className={`max-w-[80%] p-3 rounded-xl text-sm leading-relaxed ${
-                    msg.role === "user"
-                      ? "ml-auto bg-purple-600 text-white"
-                      : "bg-white border border-purple-100 shadow"
+                  initial={{ opacity: 0, x: m.role === "user" ? 40 : -40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className={`p-2 rounded-lg w-fit max-w-[80%] ${
+                    m.role === "user"
+                      ? "ml-auto bg-purple-100 text-purple-900"
+                      : "mr-auto bg-gray-100 text-gray-800"
                   }`}
                 >
-                  {msg.text}
-                </div>
+                  <p className="text-sm">{m.text}</p>
+                  <span className="block text-[10px] text-gray-500 mt-1 text-right">
+                    {m.time}
+                  </span>
+                </motion.div>
               ))}
-              {loading && (
-                <div className="bg-white border border-purple-100 shadow p-3 rounded-xl text-sm w-fit">
-                  Thinking...
-                </div>
-              )}
+              {loading && <p className="text-sm text-gray-500">Thinking...</p>}
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t flex gap-2 bg-white">
+            <form className="p-3 border-t shadow-lg flex gap-2" onSubmit={(e) => { e.preventDefault(); sendMessage(); }}>
               <input
-                type="text"
-                className="flex-1 px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
-                placeholder="Ask me anything..."
+                className="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-purple-300"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+                placeholder="Ask a question..."
               />
               <button
                 onClick={sendMessage}
-                disabled={loading}
-                className="px-3 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 disabled:opacity-50"
+                className="text-purple-800 hover:bg-purple-800 hover:text-white px-2 py-2 rounded-lg text-sm flex items-center justify-center"
               >
-                <Send className="w-4 h-4" />
+                <SendHorizontal className="w-6 h-5" />
               </button>
-            </div>
+            </form>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

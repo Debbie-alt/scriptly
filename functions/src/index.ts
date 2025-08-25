@@ -30,3 +30,36 @@ setGlobalOptions({ maxInstances: 10 });
 //   logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+import * as functions from "firebase-functions";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+// Load Gemini API key from Firebase config
+// const genAI = new GoogleGenerativeAI(functions.config().gemini.key);
+
+// export const chatbot = functions.https.onRequest(async (req, res) => {
+//   res.set("Access-Control-Allow-Origin", "*");
+//   res.set("Access-Control-Allow-Headers", "Content-Type");
+
+//   if (req.method === "OPTIONS") {
+//     return res.status(204).send(""); // Handle CORS preflight
+//   }
+
+//   try {
+//     const { message } = req.body as { message?: string };
+
+//     if (!message) {
+//       return res.status(400).json({ error: "Message required" });
+//     }
+
+//     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+//     const result = await model.generateContent(message);
+//     const reply = result.response.text();
+
+//     return res.status(200).json({ reply });
+//   } catch (err) {
+//     console.error("Chatbot error:", err);
+//     return res.status(500).json({ error: "Something went wrong" });
+//   }
+// });
+

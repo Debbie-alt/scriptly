@@ -4,6 +4,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Link from 'next/link'
 
 const Slider = dynamic(() => import('react-slick'), {
   ssr: false,
@@ -69,16 +70,15 @@ const Hero = () => {
         </h1>
         <p className="text-gray-700 dark:text-purple-100 font-medium mx-auto lg:mx-0 w-full max-w-xl text-sm sm:text-base mb-6">
           Need a writer? Connect instantly with top experts for any project, any time.
-          cum qui delectus voluptatum ea eaque voluptate similique, laudantium nesciunt et
         </p>
 
         <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
-          <button className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all">
+          <Link href='/writers'className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all">
             Hire a Writer
-          </button>
-          <button className="px-8 py-2 bg-transparent border border-[#a1a1e6] hover:opacity-80 text-black rounded-md shadow-lg transition-all dark:text-purple-100">
+          </Link>
+          <Link href='/resources' className="px-8 py-2 bg-transparent border border-[#a1a1e6] hover:opacity-80 text-black rounded-md shadow-lg transition-all dark:text-purple-100">
             Try it out
-          </button>
+          </Link>
         </div>
       </div>
 
