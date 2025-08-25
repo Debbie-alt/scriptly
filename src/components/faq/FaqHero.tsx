@@ -22,6 +22,8 @@ const Hero = () => {
             Search
           </button>
         </div>
+        {/* Preload background image */}
+        <link rel="preload" as="image" href="skypic3.jpg" />
       </div>
     </section>
   );

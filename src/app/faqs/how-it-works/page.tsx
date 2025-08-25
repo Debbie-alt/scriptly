@@ -12,7 +12,7 @@ const FEEDBACK = [
 const HowItWorks = () => {
   const [selected, setSelected] = useState<string | null>(null);
   return (
-    <div className="mx-auto py-30 px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
+    <div className="mx-auto py-30 px-6 md:px-18 lg:px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
       <div className="flex-1">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 dark:text-gray-300 mb-6 flex items-center gap-1">
@@ -32,7 +32,7 @@ const HowItWorks = () => {
           </div>
         </div>
         {/* Content */}
-        <ol className="list-decimal list-inside space-y-4 text-gray-800 dark:text-gray-100 mb-8">
+        <ol className="list-decimal list-inside space-y-4 text-sm sm:text-base text-gray-800 dark:text-gray-100 mb-8">
           <li>Sign up or log in to your Scriptly account.</li>
           <li>Choose the type of essay or assignment you need.</li>
           <li>Fill in your requirements and upload any relevant materials.</li>

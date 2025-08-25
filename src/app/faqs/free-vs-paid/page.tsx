@@ -12,7 +12,7 @@ const FEEDBACK = [
 const FreeVsPaid = () => {
   const [selected, setSelected] = useState<string | null>(null);
   return (
-    <div className="mx-auto py-30 px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
+    <div className="mx-auto py-30 px-6 md:px-18  lg:px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
       <div className="flex-1">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 dark:text-gray-300 mb-6 flex items-center gap-1">
@@ -22,10 +22,10 @@ const FreeVsPaid = () => {
         </nav>
         {/* Title */}
         <h1 className="text-3xl font-bold mb-1 text-gray-900 dark:text-white ">Free vs Paid Features</h1>
-        <p className="text-gray-500 dark:text-gray-200 mb-6">What tools and services are free, and what are premium?</p>
+        <p className="text-gray-500 text-sm sm:text-base dark:text-gray-200 mb-6">What tools and services are free, and what are premium?</p>
         {/* Author */}
         <div className="flex items-center mb-8">
-          <img src="https://api.dicebear.com/7.x/identicon/svg?seed=scriptlyfree" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
+          <img src="/scriptly-logo.png" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
           <div>
             <p className="text-sm text-gray-800 dark:text-gray-100">Written by Scriptly Team</p>
             <p className="text-xs text-gray-500 dark:text-gray-300">Updated this week</p>

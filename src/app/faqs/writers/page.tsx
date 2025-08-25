@@ -12,7 +12,7 @@ const FEEDBACK = [
 const Writers = () => {
   const [selected, setSelected] = useState<string | null>(null);
   return (
-    <div className="max-w-5xl mx-auto py-12 px-4 flex flex-col md:flex-row gap-12 min-h-screen mt-20">
+    <div className="max-w-5xl mx-auto py-12 px-6 md:px-18 lg:px-24 flex flex-col md:flex-row gap-12 min-h-screen mt-20">
       <div className="flex-1">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-4 flex items-center gap-1">
@@ -25,7 +25,7 @@ const Writers = () => {
         <p className="text-gray-500 mb-6">Learn about our expert writers and their qualifications</p>
         {/* Author */}
         <div className="flex items-center mb-8">
-          <img src="https://api.dicebear.com/7.x/identicon/svg?seed=scriptlywriters" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
+          <img src="/scriptly-logo.png" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
           <div>
             <p className="text-sm text-gray-800">Written by Scriptly Team</p>
             <p className="text-xs text-gray-500">Updated this week</p>

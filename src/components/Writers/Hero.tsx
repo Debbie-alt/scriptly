@@ -6,7 +6,7 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className='relative px-20 py-6 flex justify-between items-center bg-white dark:bg-[#111111]'>
+    <section className='relative px-5 md:px-10 lg:px-20 py-6 flex flex-col-reverse md:flex-row justify-between items-center bg-white dark:bg-[#111111]'>
       
       
         <div className="relative flex-1 flex justify-start items-center">
@@ -20,7 +20,7 @@ const Hero = () => {
         />
       </div>    
       
-      <div className="flex-1">
+      <div className="flex-1 mt-20 md:mt-0">
         <h1 className='text-5xl font-semibold text-[#0f0e47] dark:text-purple-50 leading-snug'>
           Meet Our <span className="text-purple-800 dark:text-purple-400">Writers</span>
         </h1>

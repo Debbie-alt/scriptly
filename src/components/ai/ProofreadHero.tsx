@@ -39,10 +39,10 @@ export default function Proofreader() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl font-extrabold mb-4 ">
+          <h1 className="sm:text-5xl text-4xl font-extrabold mb-4 ">
             Scriptly's Proofreading Tool
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <p className="sm:text-lg text-gray-700 max-w-2xl mx-auto">
             Catch grammar mistakes, refine style, and improve clarity instantly.  
             Adjust creativity to fit your needs — from strict corrections to stylish rewrites.
           </p>

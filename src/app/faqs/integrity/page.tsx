@@ -29,13 +29,13 @@ const Integrity = () => {
         <h1 className="text-3xl font-bold mb-1 text-gray-900">
           Academic Integrity
         </h1>
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 text-sm sm:text-base mb-6">
           How we ensure originality and avoid plagiarism
         </p>
         {/* Author */}
         <div className="flex items-center mb-8">
           <img
-            src="https://api.dicebear.com/7.x/identicon/svg?seed=scriptlyintegrity"
+            src="/scriptly-logo.png"
             alt="Author avatar"
             className="w-10 h-10 rounded-full mr-3"
           />

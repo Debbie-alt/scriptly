@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className='relative px-20 py-6 flex justify-between items-center bg-white'>
+    <section className='relative px-5 md:px-10 lg:px-20 py-6 flex flex-col-reverse md:flex-row justify-between items-center bg-white'>
       <div className="flex-1">
-        <h1 className='text-5xl font-semibold text-[#0f0e47] leading-snug about-text'> 
+        <h1 className='text-4xl md:text-5xl font-semibold text-[#0f0e47] leading-snug about-text'> 
           Discover <span className="text-purple-800">Scriptly</span> <br/><i>Empowering Students, Elevating Results</i>
         </h1>
         <p className="mt-6 text-lg text-gray-700 max-w-xl">

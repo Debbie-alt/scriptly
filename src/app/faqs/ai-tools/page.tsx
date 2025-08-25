@@ -13,7 +13,7 @@ const AITools = () => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="mx-auto py-30 px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
+    <div className="mx-auto py-30 px-6 md:px-18 lg:px-24 flex flex-col md:flex-row gap-12 min-h-screen dark:bg-[#111111] dark:text-white ">
       <div className="flex-1">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 dark:text-gray-300 mb-6 flex items-center gap-1">
@@ -33,7 +33,7 @@ const AITools = () => {
         {/* Author */}
         <div className="flex items-center mb-8">
           <img
-            src="https://via.placeholder.com/40"
+            src="/scriptly-logo.png"
             alt="Author avatar"
             className="w-10 h-10 rounded-full mr-3"
           />
@@ -71,13 +71,13 @@ const AITools = () => {
         </p>
 
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-          Step 3. Humanize your writing
+          Step 3. Proofread your Text
         </h2>
         <p className="text-gray-700 dark:text-gray-200 mb-6">
-          The <span className="font-medium">Humanizer</span> makes AI-generated content sound more natural and human-like.  
-          <a href="/tools/humanizer" className="text-purple-800 dark:text-purple-300 hover:underline ml-1">
-            Check out the Humanizer here →
-          </a>
+         Scriptly's <span className="font-medium">Proofread</span> checks your essay for grammar, spelling, and punctuation errors.
+          <Link href="/proofreader" className="text-purple-800 dark:text-purple-300 hover:underline ml-1">
+            Check out the Proofreader here →
+          </Link>
         </p>
 
         {/* Feedback Section */}

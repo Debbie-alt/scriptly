@@ -18,7 +18,7 @@ const Navbar = () => {
           className="h-12 w-12 rounded-full object-cover"
         />
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <NavMenu />
         </div>
       </div>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
         {/* Hamburger (mobile only) */}
         <button
-          className="md:hidden text-2xl dark:text-white ml-2"
+          className="lg:hidden text-2xl dark:text-white ml-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -55,7 +55,7 @@ const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="absolute top-full left-0 w-full bg-white dark:bg-[#111] shadow-md flex flex-col items-center p-6 z-50 md:hidden"
+            className="absolute top-full left-0 w-full bg-white dark:bg-[#111] shadow-md flex flex-col items-center p-6 z-50 lg:hidden"
           >
             {/* NavMenu inside panel */}
             <NavMenu />

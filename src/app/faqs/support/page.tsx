@@ -22,10 +22,10 @@ const Support = () => {
         </nav>
         {/* Title */}
         <h1 className="text-3xl font-bold mb-1 text-gray-900">Support & Troubleshooting</h1>
-        <p className="text-gray-500 mb-6">Get help with your orders, tools, or account</p>
+        <p className="text-gray-500 text-sm sm:text-base mb-6">Get help with your orders, tools, or account</p>
         {/* Author */}
         <div className="flex items-center mb-8">
-          <img src="https://api.dicebear.com/7.x/identicon/svg?seed=scriptlysupport" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
+          <img src="/scriptly-logo.png" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
           <div>
             <p className="text-sm text-gray-800">Written by Scriptly Team</p>
             <p className="text-xs text-gray-500">Updated this week</p>
@@ -34,8 +34,7 @@ const Support = () => {
         {/* Content */}
         <ul className="list-disc list-inside space-y-2 text-gray-800 mb-8">
           <li>Visit our <Link href="/faqs" className="text-purple-800 hover:underline">FAQ page</Link> for quick answers.</li>
-          <li>Contact support via live chat or email for personalized help.</li>
-          <li>Check your dashboard for order status and updates.</li>
+          <li>Contact support via ur chatbot or email for personalized help.</li>
         </ul>
         {/* Feedback Section */}
         <div className="border-t pt-6 mt-12">
@@ -63,7 +62,6 @@ const Support = () => {
         <ol className="space-y-1 list-decimal list-inside">
           <li>FAQ access</li>
           <li>Contacting support</li>
-          <li>Order status</li>
         </ol>
       </aside>
     </div>

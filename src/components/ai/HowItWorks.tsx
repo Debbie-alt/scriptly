@@ -84,7 +84,7 @@ const HowItWorks = () => {
          <motion.div
           key={index}
            variants={cardVariants}
-            className="flex w-[82%] items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-5 border border-purple-200/40 dark:border-purple-800">
+            className="flex sm:w-[82%] items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-5 border border-purple-200/40 dark:border-purple-800">
            <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-purple-50 dark:bg-purple-900 flex
                  items-center justify-center`} >
                   {step.icon}
