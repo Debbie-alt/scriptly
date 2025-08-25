@@ -80,7 +80,7 @@ const SummarizerShowcase = () => {
           {/* CTA */}
           <div className="pt-4">
             <a
-              href="/register"
+              href="/signup"
               className="w-full block text-center px-6 py-3 rounded-full
               bg-yellow-500/70
               text-white font-semibold shadow-lg 

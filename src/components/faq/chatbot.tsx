@@ -86,12 +86,14 @@ if (faqMatch) {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed bottom-4 left-4 z-60">
       {/* Toggle Button */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="bg-purple-900 hover:bg-purple-950 text-white p-2 rounded-full shadow-lg"
-      >
+     <button
+  onClick={() => setOpen(!open)}
+  className={`${
+    open ? "bg-[#505081] hover:bg-gray-900" : "bg-[#505081] hover:bg-purple-950"
+  } text-white p-2 rounded-full shadow-lg`}
+>
         {open ? <X className="w-6 h-6" /> : <AiFillMessage className="w-5 h-5" />}
       </button>
 
@@ -103,7 +105,7 @@ if (faqMatch) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="mt-3 w-fit max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
+            className="mt-3  max-w-[85vw] sm:w-fit sm:max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-black text-white px-4 py-5 flex items-center gap-3 shadow-md">

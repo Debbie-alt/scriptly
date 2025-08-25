@@ -5,12 +5,16 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvide
 import { app } from '@/config/firebase.config';
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
+
 export default function SignIn() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const auth = getAuth(app);
+  const router = useRouter();
+  
 
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +23,7 @@ export default function SignIn() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Redirect or show success
+      router.push('/dashboard')
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -44,7 +49,7 @@ export default function SignIn() {
     <main
       className="min-h-screen flex items-center p-5 justify-center bg-[url('/skypic1.jpg')] bg-cover bg-center" >
       {/* Login Card */}
-      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white backdrop-blur-lg border border-white/40">
+      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/90 backdrop-blur-lg border border-white/40">
         
         {/* Icon */}
         <div className="flex justify-center mb-6">
@@ -70,7 +75,7 @@ export default function SignIn() {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Sign in with email
         </h2>
-        <p className="text-center text-gray-800 text-sm mb-8">
+        <p className="text-center text-gray-800 text-sm mb-6">
           Make a new doc to bring your words, data, and teams together. For free
         </p>
 
@@ -94,7 +99,7 @@ export default function SignIn() {
           />
           <div className="flex justify-between text-sm">
             <span></span>
-            <Link href="/register" className="text-blue-400 hover:underline">
+            <Link href="/signup" className="text-blue-400 hover:underline">
               Register
             </Link>
           </div>
@@ -117,7 +122,7 @@ export default function SignIn() {
         </div>
 
         {/* Social Login */}
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center items-center gap-4">
           <button type="button" onClick={handleGoogleLogin} className="bg-white/70 rounded-full p-2 hover:shadow-lg transition">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
@@ -130,18 +135,11 @@ export default function SignIn() {
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
               alt="Facebook"
-              className="w-8 h-8"
+              className="w-8 h-8 rounded-full"
               loading="eager"
             />
           </a>
-          <a href="#">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
-              alt="Apple"
-              className="w-8 h-8"
-              loading="eager"
-            />
-          </a>
+         
         </div>
       </div>
     </main>

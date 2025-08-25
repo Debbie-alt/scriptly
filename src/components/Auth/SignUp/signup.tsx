@@ -50,7 +50,7 @@ export default function SignUp() {
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push("/"); // redirect on success
+      router.push("/signin"); // redirect on success
     } catch (err: any) {
       setError(getErrorMessage(err));
     } finally {
@@ -64,7 +64,7 @@ export default function SignUp() {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      router.push("/");
+      router.push("/signin");
     } catch (err: any) {
       setError(getErrorMessage(err));
     } finally {
@@ -74,8 +74,8 @@ export default function SignUp() {
 
   return (
     <main
-      className="min-h-screen py-20 p-4 flex items-center justify-center bg-[url('/skypic1.jpg')]  bg-cover bg-center">
-      <div className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl bg-white/20 backdrop-blur-lg border border-white/40">
+      className="min-h-screen py-16 p-4 flex items-center justify-center bg-[url('/skypic1.jpg')]  bg-cover bg-center">
+      <div className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl bg-white/70 backdrop-blur-lg border border-white/40">
         
         <div className="flex justify-center mb-6">
           <div className="w-14 h-14 rounded-full flex items-center justify-center 
@@ -100,7 +100,7 @@ export default function SignUp() {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Create your account
         </h2>
-        <p className="text-center text-gray-300 text-sm mb-8">
+        <p className="text-center text-gray-800 text-sm mb-6">
           Sign up to start your journey with Scriptly.
         </p>
 
@@ -149,11 +149,11 @@ export default function SignUp() {
 
         <div className="flex items-center my-6">
           <div className="flex-1 h-px bg-gray-300" />
-          <span className="px-3 text-gray-300 text-sm">Or sign up with</span>
+          <span className="px-3 text-gray-700 text-sm">Or sign up with</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center items-center gap-4">
           <button
             type="button"
             onClick={handleGoogleSignup}
@@ -170,18 +170,11 @@ export default function SignUp() {
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
               alt="Facebook"
-              className="w-8 h-8"
+              className="w-8 h-8 "
               loading="eager"
             />
           </a>
-          <a href="#">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
-              alt="Apple"
-              className="w-8 h-8"
-              loading="eager"
-            />
-          </a>
+          
         </div>
       </div>
     </main>

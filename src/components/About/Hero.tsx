@@ -7,13 +7,13 @@ const Hero = () => {
     <section className='relative px-5 md:px-10 lg:px-20 py-6 flex flex-col-reverse md:flex-row justify-between items-center bg-white'>
       <div className="flex-1">
         <h1 className='text-4xl md:text-5xl font-semibold text-[#0f0e47] leading-snug about-text'> 
-          Discover <span className="text-purple-800">Scriptly</span> <br/><i>Empowering Students, Elevating Results</i>
+          Discover <span className="text-purple-800">Scriptly</span> <br/>Empowering Students, Elevating Results
         </h1>
         <p className="mt-6 text-lg text-gray-700 max-w-xl">
           Scriptly is your trusted partner for academic success. We connect you with expert writers, provide tailored essay and assignment help, and ensure every project is original, confidential, and delivered on time. Experience stress-free learning and achieve your goals with Scriptly by your side.
         </p>
         <div className="mt-8">
-          <Link href='/login' className="px-6 py-3 bg-[#505081] w-3/4 blck text-white rounded-md shadow hover:[#505081]/80 transition-all font-semibold">
+          <Link href='/signin' className="px-6 py-3 bg-[#505081] w-3/4 blck text-white rounded-md shadow hover:[#505081]/80 transition-all font-semibold">
             Get Started
           </Link>
           {/* <button className="ml-4 px-6 py-3 bg-gray-200 text-gray-800 rounded-md shadow hover:bg-gray-300 transition-all font-semibold">

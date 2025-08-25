@@ -4,6 +4,7 @@ import Section2 from '@/components/About/Section2'
 import WhyChoose from '@/components/LandingPage/WhyChooseUs'
 import OurStory from '@/components/About/OurStory'
 import TestimonialCarousel from '@/components/About/Testimonial'
+import Faq from '@/components/LandingPage/Faq'
 
 const AboutPage = () => {
   return (
@@ -17,6 +18,7 @@ const AboutPage = () => {
       }}> lorem </div> */}
       <TestimonialCarousel/>
       <WhyChoose/>
+      <Faq/>
 
     </>
   )

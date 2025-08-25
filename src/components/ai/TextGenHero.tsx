@@ -44,7 +44,7 @@ const TextGeneratorHero = () => {
             Unleash ideas, marketing copy, and fresh content with the power of AI.
             Just type your thought, and let Scriptly bring it to life.
           </p>
-          <Link href='/login' className="px-6 py-3 rounded-xl bg-yellow-600/70  font-medium hover:bg-yellow-500 transition">
+          <Link href='/signin' className="px-6 py-3 rounded-xl bg-yellow-600/70  font-medium hover:bg-yellow-500 transition">
             Explore Features
           </Link>
 

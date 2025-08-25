@@ -25,13 +25,13 @@ const Navbar = () => {
 
       <div className="flex items-center gap-3">
         <Link
-          href="/login"
+          href="signin"
           className="hidden sm:block dark:text-white text-sm font-medium"
         >
           Login
         </Link>
 
-        <Link href="/login" className="hidden lg:block">
+        <Link href="signin" className="hidden lg:block">
           <span className="bg-[#0f0e47] text-white px-5 sm:px-7 py-2.5 rounded-md text-sm hover:bg-[#272757]/80 transition flex items-center gap-2">
             <FiLogOut className="w-4 h-4" />
            Book a Demo
@@ -62,14 +62,14 @@ const Navbar = () => {
 
             {/* Extra links for mobile */}
             <Link
-              href="/login"
+              href="signin"
               className="mt-6 text-gray-800 dark:text-gray-200 text-sm"
               onClick={() => setIsOpen(false)}
             >
               Login
             </Link>
             <Link
-              href="/login"
+              href="signin"
               onClick={() => setIsOpen(false)}
               className="mt-3 bg-[#0f0e47] text-white px-5 py-2.5 rounded-md text-sm hover:bg-[#272757]/80 transition flex items-center gap-2 justify-center"
             >

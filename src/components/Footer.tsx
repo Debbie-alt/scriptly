@@ -30,24 +30,22 @@ const Footer = () => {
             <li><Link href="/how-it-works" className="hover:underline">How It Works</Link></li>
             <li><Link href="/services" className="hover:underline">Our Services</Link></li>
             <li><Link href="/about" className="hover:underline">About Us</Link></li>
-            <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-3">Support</h4>
           <ul className="space-y-3 ">
-            <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
-            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
+            <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+            <li><Link href="/resources" className="hover:underline">Resources</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-3">For Students</h4>
           <ul className="space-y-3 t">
-            <li><Link href="/samples" className="hover:underline">Essay Samples</Link></li>
+            <li><Link href="/proofreader" className="hover:underline">Proofreader</Link></li>
             <li><Link href="/writers" className="hover:underline">Meet Our Writers</Link></li>
-            <li><Link href="/blog" className="hover:underline">Blog</Link></li>
           </ul>
         </div>
 
@@ -63,23 +61,23 @@ const Footer = () => {
           </div>
           <h4 className="font-medium  mb-6">Contact Info</h4>
           <p className="mb-1">Email: support@essaypro.com</p>
-          <p className="">Phone: +1 (800) 123-4567</p>
+          {/* <p className="">Phone: +1 (800) 123-4567</p> */}
         </div>
 
         <div >
           <h4 className="font-semibold text-white mb-2">Legal</h4>
           <ul className="space-y-3">
             <li><Link href="/privacypolicy" className="hover:underline">Privacy Policy</Link></li>
-            <li><Link href="/termsofservice" className="hover:underline">Terms of Use</Link></li>
-            <li><Link href="/refund-policy" className="hover:underline">Refund Policy</Link></li>
+            <li><Link href="/termsofservice" className="hover:underline">Terms of Service</Link></li>
+            <li><Link href="/refund-policy" className="hover:underline">Cookie Policy</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-white mb-2">Quick Links</h4>
           <ul className="space-y-3">
-            <li><Link href="/order" className="hover:underline">Place an Order</Link></li>
-            <li><Link href="/login" className="hover:underline">Login</Link></li>
+            {/* <li><Link href="/order" className="hover:underline">Place an Order</Link></li> */}
+            <li><Link href="/signin" className="hover:underline">Login</Link></li>
             <li><Link href="/signup" className="hover:underline">Sign Up</Link></li>
           </ul>
         </div>
