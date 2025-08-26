@@ -10,7 +10,6 @@ import {
   FaRegStar,
 } from "react-icons/fa";
 
-
 interface Feature {
   title: string;
   description: string;
@@ -22,7 +21,7 @@ const features: Feature[] = [
     title: "Expert Academic Writers",
     description:
       "Our team consists of degree-holding professionals with years of essay writing experience.",
-    icon: <FaUserGraduate className="text-[#8686ac] w-8 h-8 mb-4" />,
+    icon: <FaUserGraduate className="text-[#6366f1] w-8 h-8 mb-4" />,
   },
   {
     title: "100% Original & Plagiarism-Free",
@@ -40,7 +39,7 @@ const features: Feature[] = [
     title: "Unlimited Revisions",
     description:
       "Request as many edits as you need until you’re 100% satisfied with your essay.",
-    icon: <FaRegCheckCircle className="text-[#505081] w-8 h-8 mb-4" />,
+    icon: <FaRegCheckCircle className="text-[#0ea5e9] w-8 h-8 mb-4" />,
   },
   {
     title: "24/7 Support",
@@ -56,14 +55,11 @@ const features: Feature[] = [
   },
 ];
 
-// animation variants with proper typing
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -74,18 +70,18 @@ const item: Variants = {
 
 const WhyChoose = () => {
   return (
-    <section className="relative px-4 sm:px-12 md:px-16 py-20 overflow-hidden bg-gray-50 dark:bg-[#111111]">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#272757] via-[#0f0e47] to-[#505081]" />
+    <section className="relative px-4 sm:px-12 md:px-16 py-20 overflow-hidden bg-gray-50 dark:bg-[#0d0d0d]">
+      {/* Glass gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-200 dark:from-[#0d0d0d] dark:via-[#111] dark:to-[#1a1a1a]" />
 
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl text-center font-bold mb-4 dark:text-white"
+        className="text-3xl md:text-4xl text-center font-bold mb-4 text-gray-900 dark:text-gray-300"
       >
-        Why Choose <span className="dark:text-[#8686ac] text-[#0f0e47]">Scriptly</span>?
+        Why Choose <span className="text-[#272727] dark:text-gray-300">Scriptly</span>?
       </motion.h2>
 
       <motion.p
@@ -93,7 +89,7 @@ const WhyChoose = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mb-12 text-base md:text-lg text-center text-gray-600 dark:text-gray-300 "
+        className="mb-12 text-base md:text-lg text-center text-gray-600 dark:text-gray-400"
       >
         Your trusted partner for essays, research papers, and academic writing success.
       </motion.p>
@@ -110,13 +106,13 @@ const WhyChoose = () => {
             key={idx}
             variants={item}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="bg-white/60 dark:bg-[#272757]/60 backdrop-blur-md border dark:border-[#505081]/40 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:border-[#8686ac]"
+            className="bg-white/60 dark:bg-black/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl"
           >
             <div className="flex justify-center">{feature.icon}</div>
-            <h4 className="font-semibold text-lg dark:text-white mb-2">
+            <h4 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">
               {feature.title}
             </h4>
-            <p className=" text-gray-500 dark:text-[#c7c7e0] text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
               {feature.description}
             </p>
           </motion.div>

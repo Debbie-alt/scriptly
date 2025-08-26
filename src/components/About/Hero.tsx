@@ -1,36 +1,99 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ShieldCheck, Clock, Sparkles } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className='relative px-5 md:px-10 lg:px-20 py-6 flex flex-col-reverse md:flex-row justify-between items-center bg-white'>
-      <div className="flex-1">
-        <h1 className='text-4xl md:text-5xl font-semibold text-[#0f0e47] leading-snug about-text'> 
-          Discover <span className="text-purple-800">Scriptly</span> <br/>Empowering Students, Elevating Results
-        </h1>
-        <p className="mt-6 text-lg text-gray-700 max-w-xl">
-          Scriptly is your trusted partner for academic success. We connect you with expert writers, provide tailored essay and assignment help, and ensure every project is original, confidential, and delivered on time. Experience stress-free learning and achieve your goals with Scriptly by your side.
-        </p>
-        <div className="mt-8">
-          <Link href='/signin' className="px-6 py-3 bg-[#505081] w-3/4 blck text-white rounded-md shadow hover:[#505081]/80 transition-all font-semibold">
-            Get Started
-          </Link>
-          {/* <button className="ml-4 px-6 py-3 bg-gray-200 text-gray-800 rounded-md shadow hover:bg-gray-300 transition-all font-semibold">
-            Learn More
-          </button> */}
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-24 flex flex-col-reverse md:flex-row justify-between items-center bg-white">
+        {/* Left Section */}
+        <div className="flex-1 relative z-10">
+         
+          <h1 className="text-4xl md:text-5xl font-semibold text-[#0f0e47] leading-snug">
+            Discover <span className="text-purple-800">Scriptly</span> <br />
+            Empowering Students, Elevating Results
+          </h1>
+
+          <p className="mt-6 text-gray-700 max-w-xl">
+            Scriptly is your trusted partner for academic success. We connect you with expert writers, provide tailored essay and assignment help, and ensure every project is original, confidential, and delivered on time.
+          </p>
+            <span className="inline-block px-3 py-1 mt-3  text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full">
+            🎓 Academic Success Simplified
+          </span>
+
+       
+
+          {/* Buttons */}
+          <div className="mt-8 flex gap-4">
+            <Link
+              href="/signin"
+              className="px-6 py-3 hover:bg-[#505081] text-white rounded-lg shadow bg-[#3e3e6d] transition-all font-semibold"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/about"
+              className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg shadow hover:bg-gray-200 transition-all font-semibold"
+            >
+              Learn More
+            </Link>
           </div>
-      </div>
-      <div className="relative flex-1 flex justify-end items-center">
-        <div className="absolute -top-10 -right-10 w-[420px] h-[420px] bg-gradient-to-br from-blue-400 via-purple-200 to-purple-100 rounded-full blur-2xl opacity-70 z-0"></div>
-        <Image
-          src="/about-hero.png"
-          alt="About Hero"
-          width={500}
-          height={400}
-          className="object-cover rounded-lg mt-20  relative z-10"/>
-      </div>
-    </section>
+        </div>
+
+        <div className="relative flex-1 flex flex-col justify-end items-center">
+          {/* Gradient Glow Behind Image */}
+          <div className="absolute -top-12 -right-12 w-[420px] h-[420px] bg-gradient-to-br from-purple-400 via-blue-200 to-purple-100 rounded-full blur-3xl opacity-60 z-0"></div>
+          <div className="absolute bottom-0 left-8 w-[160px] h-[160px] bg-gradient-to-tr from-purple-200 to-purple-100 rounded-full blur-2xl opacity-40 z-0"></div>
+
+          <Image
+            src="/about1.svg"
+            alt="About Hero"
+            width={500}
+            height={400}
+            className="object-cover rounded-2xl relative z-10"
+          />
+            <div className="flex flex-wrap gap-4  mt-8 text-gray-700">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-green-600" /> Confidential
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5 text-blue-600" /> On-Time
+            </div>
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-yellow-500" /> Original Work
+            </div>
+          </div>
+          
+        </div>
+        
+
+      </section>
+      
+
+      {/* Stats Section */}
+      <section className="px-6 md:px-12 lg:px-20 pb-8 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p className="text-3xl font-bold text-[#0f0e47]">5k+</p>
+            <p className="text-sm text-gray-600">Students Helped</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#0f0e47]">98%</p>
+            <p className="text-sm text-gray-600">Satisfaction Rate</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#0f0e47]">1,200+</p>
+            <p className="text-sm text-gray-600">Projects Delivered</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#0f0e47]">24/7</p>
+            <p className="text-sm text-gray-600">Support Available</p>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 

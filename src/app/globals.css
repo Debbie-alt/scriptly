@@ -33,6 +33,7 @@ body {
   font-weight: 600;
   line-height: 1.2;
 }
+
 .about-text i {
   font-family: cursive;
 }
@@ -237,4 +238,12 @@ body {
   box-shadow: 0 16px 64px 0 #505081;
   border-radius: 160px;
   pointer-events: none;
+}
+#dark .hero-bg-image::before{
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  .hero-bg-image::before {
+    display: none;
+  }
 }

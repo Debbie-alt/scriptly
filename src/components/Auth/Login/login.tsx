@@ -123,11 +123,15 @@ export default function SignIn() {
 
         {/* Social Login */}
         <div className="flex justify-center items-center gap-4">
-          <button type="button" onClick={handleGoogleLogin} className="bg-white/70 rounded-full p-2 hover:shadow-lg transition">
+        <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="bg-white/70 rounded-full p-2 hover:shadow-lg transition"
+          >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
               alt="Google"
-              className="w-8 h-8"
+              className="w-5 h-5"
               loading="eager"
             />
           </button>
@@ -135,7 +139,7 @@ export default function SignIn() {
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
               alt="Facebook"
-              className="w-8 h-8 rounded-full"
+              className="w-7her h-7 "
               loading="eager"
             />
           </a>

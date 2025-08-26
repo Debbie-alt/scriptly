@@ -85,13 +85,31 @@ const Hero = () => {
       <div className="w-full lg:absolute lg:bottom-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-[80%] mt-10 lg:mt-0 z-20">
         <Slider {...carouselSettings}>
           {carouselItems.map((item, idx) => (
-            <div key={idx} className="px-3">
-              <div className="glassmorph-card min-h-[180px] p-6 rounded-2xl shadow-2xl border border-white/40 bg-white/60 backdrop-blur-lg flex flex-col items-center justify-center transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer dark:bg-[#505081]/70 dark:border-purple-900/40 dark:shadow-purple-900/30">
-                <div className="mb-3">{item.icon}</div>
-                <h3 className="text-base font-bold mb-2 text-black/90 dark:text-purple-100 text-center">{item.title}</h3>
-                <p className="text-gray-800/80 dark:text-purple-200/80 text-xs text-center leading-snug">{item.desc}</p>
-              </div>
-            </div>
+           <div key={idx} className="px-3">
+  <div
+    className="
+      min-h-[180px] p-6 rounded-2xl shadow-2xl border 
+      border-white/40 bg-white/60 backdrop-blur-lg 
+      flex flex-col items-center justify-center 
+      transition-transform hover:scale-105 hover:shadow-3xl cursor-pointer  
+
+      /* 🌞 Light mode */
+      text-black dark:text-white
+
+      /* 🌙 Dark mode glassmorphism */
+      dark:bg-black/40 dark:border-purple-200/20 dark:shadow-purple-500/10
+    "
+  >
+    <div className="mb-3">{item.icon}</div>
+    <h3 className="text-base font-bold mb-2 text-black/90 dark:text-white text-center">
+      {item.title}
+    </h3>
+    <p className="text-gray-800/80 dark:text-gray-300 text-xs text-center leading-snug">
+      {item.desc}
+    </p>
+  </div>
+</div>
+
           ))}
         </Slider>
       </div>
