@@ -168,7 +168,6 @@ body {
 } 
  
 
-
 .hero-bg-image {
   display: flex;
   align-items: center;
@@ -179,8 +178,8 @@ body {
   width: 60%;
   height: 80vh; /* full screen */
   background-image: 
-    url('/writers3.svg');
-  background-size: cover;
+    url('/hero-image.png');
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;

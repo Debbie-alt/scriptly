@@ -6,7 +6,6 @@ import Faq from "@/components/LandingPage/Faq";
 import TestimonialCarousel from "@/components/LandingPage/Testimonial";
 import ToolsCarousel from "@/components/LandingPage/Tools2";
 import SignUpCta from "@/components/LandingPage/Cta2";
-// pages/_app.tsx
 
 
 
@@ -16,10 +15,12 @@ export default function Home() {
     <Hero/>
     <WhyChoose/>
     <Cta/>
-    <ToolsCarousel/>
+   
+
+   <TestimonialCarousel/>
+  <ToolsCarousel/>
      <Faq/>
-    <TestimonialCarousel/>
-    <SignUpCta/>
+    {/* <SignUpCta/> */}
    
    </>
   );

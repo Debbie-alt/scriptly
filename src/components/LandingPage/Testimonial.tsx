@@ -88,8 +88,8 @@ const TestimonialCarousel: React.FC = () => {
   }
 
   return (
-    <section className="bg-white  mx-auto  px-5  md:px-10 lg:px-30 lg:px-38 border-t border-t-gray-300 py-18 md:py-24">
-      <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-8">
+    <section className="bg-white/70 mx-auto  px-5  md:px-10 lg:px-30 lg:px-38 border-t border-t-gray-300 py-18 md:py-24">
+      <h3 className="text-sm      sm:text-lg  uppercase tracking-wider text-gray-500 mb-8">
         Hear from our customers
       </h3>
 

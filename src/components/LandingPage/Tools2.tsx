@@ -8,20 +8,20 @@ const tools = [
   {
     name: "AI Proofreader",
     description: "Polish your text with advanced proofreading powered by AI.",
-    image: "/images/proofreader.png",
+    image: "/proof.png",
   },
   {
     name: "Text Generator",
     description: "Generate engaging blog posts, essays, and more instantly.",
-    image: "/images/text-generator.png",
+    image: "/text-gen.png",
   },
   {
     name: "Chatbot",
     description: "A smart FAQ chatbot to answer your questions anytime.",
-    image: "/images/chatbot.png",
+    image: "/chatbot1.png",
   },
   {
-    name: "Text-to-Speech",
+    name: "PLagiarism Checker",
     description: "Convert your text into natural-sounding voices.",
     image: "/images/text-to-speech.png",
   },
@@ -39,7 +39,10 @@ export default function ToolsCarousel() {
   };
 
   return (
-    <section className="py-16 bg-black text-white relative">
+    <section className="py-16 bg-[#272757] text-white relative"   style={{
+        backgroundImage:
+          "linear-gradient(to left, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.2) 100%, rgba(0,0,0,0)), url('/partner-hero.jpg')"
+      }}>
       <h2 className="text-3xl font-bold text-center mb-8">Explore Our Tools</h2>
 
       <div className="relative max-w-4xl mx-auto overflow-hidden">
@@ -54,7 +57,7 @@ export default function ToolsCarousel() {
           <img
             src={tools[index].image}
             alt={tools[index].name}
-            className="w-40 h-40 object-contain mb-4"
+            className=" object-contain mb-4"
           />
           <h3 className="text-2xl font-semibold">{tools[index].name}</h3>
           <p className="text-gray-300 mt-2">{tools[index].description}</p>

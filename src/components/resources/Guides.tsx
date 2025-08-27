@@ -35,7 +35,7 @@ const GuidesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100"
         >
-          Guides & <span className="text-purple-700 dark:text-purple-400">Tutorials</span>
+          Guides & Tutorials
         </motion.h2>
 
         <motion.p
