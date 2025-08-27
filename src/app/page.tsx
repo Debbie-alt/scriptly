@@ -4,6 +4,7 @@ import WhyChoose from "@/components/LandingPage/WhyChooseUs";
 import Cta from "@/components/LandingPage/Cta";
 import Faq from "@/components/LandingPage/Faq";
 import TestimonialCarousel from "@/components/LandingPage/Testimonial";
+import ToolsCarousel from "@/components/LandingPage/Tools2";
 // pages/_app.tsx
 
 
@@ -14,6 +15,7 @@ export default function Home() {
     <Hero/>
     <WhyChoose/>
     <Cta/>
+    <ToolsCarousel/>
      <Faq/>
     <TestimonialCarousel/>
    
