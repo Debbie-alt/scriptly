@@ -19,7 +19,7 @@
 
 body {
   font-family: 'Poppins',sans-serif;
-  background: linear-gradient(to right, #f2f0ef, #f2f2f2);
+  background:rgb(250, 248, 248);
   /* Off-white to soft gold gradient */
   color: #333333; /* Charcoal text */
   min-height: 100vh;
@@ -148,8 +148,9 @@ body {
   body {
     @apply bg-background text-foreground;}}
 
-.hero-grid-lines {
+    .hero-grid-lines {
   position: relative;
+
   background: repeating-linear-gradient(
     to right,
     transparent,
@@ -164,7 +165,9 @@ body {
     rgba(120,120,130,0.13) 100px,
     transparent 101px
   );
-}
+} 
+ 
+
 
 .hero-bg-image {
   display: flex;
@@ -174,12 +177,13 @@ body {
 .hero-bg-left {
   position: relative;
   width: 60%;
-  height: 100vh; 
+  height: 80vh; /* full screen */
   background-image: 
     url('/writers3.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 50%;
 }
 
 .hero-bg-left::before {

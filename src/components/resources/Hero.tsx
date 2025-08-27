@@ -5,7 +5,7 @@ import { BookOpen, FileText, Download } from "lucide-react";
 
 const ResourcesHero = () => {
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 dark:from-[#0b0b0b] dark:to-[#141414] py-30 px-6">
+    <section className="relative bg-gradient-to-b from-white to-gray-50 dark:from-[#0b0b0b] dark:to-[#141414] py-30 hero-grid-lines px-6">
       <div className="max-w-6xl mx-auto text-center relative z-10">
         
         {/* Title */}
