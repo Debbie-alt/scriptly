@@ -18,7 +18,7 @@
 } */
 
 body {
-  font-family:  'Quicksand', sans-serif;
+  font-family: 'Poppins',sans-serif;
   background: linear-gradient(to right, #f2f0ef, #f2f2f2);
   /* Off-white to soft gold gradient */
   color: #333333; /* Charcoal text */
@@ -172,17 +172,16 @@ body {
   position: relative;
 }
 .hero-bg-left {
-  width: 550px;
-  height:500px;
-  background-image: url('/hero-image.png');
-  background-size: cover;
-  background-position:center;
-  background-repeat: no-repeat;
-  border-radius: 1rem;
-  margin-right: 2rem;
   position: relative;
-  box-shadow: 0 0 0 0;
+  width: 60%;
+  height: 100vh; 
+  background-image: 
+    url('/writers3.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 .hero-bg-left::before {
   content: '';
   position: absolute;

@@ -24,6 +24,7 @@ const guides = [
 const GuidesSection = () => {
   return (
     <section className="relative py-20 px-6 bg-gray-50 dark:bg-[#0d0d0d]">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 pointer-events-none"></div>
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Heading */}
         <motion.h2
