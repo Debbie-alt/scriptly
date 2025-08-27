@@ -73,12 +73,15 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
-          <Link href='/writers'className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md shadow-lg transition-all">
+          <Link href='/writers'className="px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black text-center rounded-md shadow-lg transition-all">
             Hire a Writer
           </Link>
-          <Link href='/resources' className="px-8 py-2 bg-transparent border border-[#a1a1e6] hover:opacity-80 text-black rounded-md shadow-lg transition-all dark:text-purple-100">
-            Try it out
-          </Link>
+           <Link
+              href="/about"
+              className="px-6 py-3 dark:bg-gray-100 text-gray-800 rounded-lg  border border-[#0f0e47] shadow hover:bg-gray-200 transition-all font-semibold dark:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
+            >
+              Learn More
+            </Link>
         </div>
       </div>
 

@@ -23,7 +23,7 @@ export function ModeToggle() {
         }`}
       />
       <Moon
-        className={`h-[1.2rem] w-[1.2rem] transition-all duration-300 ${
+        className={`h-[1.2rem] w-[1.2rem] text-white transition-all duration-300 ${
           isDark ? "scale-100 text-white rotate-0" : "scale-0 -rotate-90 absolute"
         }`}
       />

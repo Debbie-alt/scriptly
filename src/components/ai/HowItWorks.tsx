@@ -37,70 +37,77 @@ const HowItWorks = () => {
          
 
   return (
-    <section className="relative w-full py-20 px-6 bg-white dark:from-[#141021] dark:to-[#0f0e47]">
-      <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* LEFT SIDE - Image */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
-        >
-          <motion.img
- src="/chat-with-ai.svg"
-   alt="AI summarizer illustration"
-  className="w-full max-w-md drop-shadow-xl"
-  animate={{ y: [0, -10, 0] }}
-  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-/>
+    <section className="relative w-full py-20 px-6 bg-white dark:bg-[#111111]">
+  <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* LEFT SIDE - Image */}
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="flex justify-center"
+    >
+      <motion.img
+        src="/chat-with-ai.svg"
+        alt="AI summarizer illustration"
+        className="w-full max-w-md drop-shadow-xl"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
+    </motion.div>
 
-        </motion.div>
+    {/* RIGHT SIDE - Steps */}
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white text-center md:text-left">
+        How It <span className="text-indigo-700 dark:text-indigo-400">Works</span>
+      </h2>
 
-        {/* RIGHT SIDE - Steps */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white text-center md:text-left">
-            How It <span className="text-[#272757]/70">Works</span>
-          </h2>
+      <p className="max-w-xl text-lg text-gray-700 dark:text-gray-300 mb-12 text-center md:text-left">
+        Get started in seconds. Scriptly makes summarizing effortless with just 3 steps.
+      </p>
 
-          <p className="max-w-xl text-lg text-gray-700 dark:text-gray-300 mb-12 text-center md:text-left">
-            Get started in seconds. Scriptly makes summarizing effortless with just 3 steps.
-          </p>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid gap-8"
+      >
+        {steps.map((step, index) => (
+       <motion.div
+  key={index}
+  variants={cardVariants}
+  className="flex sm:w-[82%] items-start gap-4 
+             bg-white/90 dark:bg-[#181818]/80 
+             rounded-xl shadow-lg p-5 border 
+             border-gray-200 dark:border-gray-700 
+             backdrop-blur-md 
+             transition-all duration-300 ease-out 
+             hover:scale-[1.02] hover:shadow-xl hover:border-indigo-400/50"
+>
+  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-purple-50 dark:bg-[#222222] flex items-center justify-center">
+    {step.icon}
+  </div>
+  <div>
+    <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+      {step.title}
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
+  </div>
+</motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid gap-8"
-          >
-       {steps.map((step, index) => (
-         <motion.div
-          key={index}
-           variants={cardVariants}
-            className="flex sm:w-[82%] items-start gap-4 bg-white dark:bg-[#181818] rounded-xl shadow-lg p-5 border border-purple-200/40 dark:border-purple-800">
-           <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-purple-50 dark:bg-purple-900 flex
-                 items-center justify-center`} >
-                  {step.icon}
-                </div>
-                <div>
-                  <h3 className="text-LG font-medium text-gray-900 dark:text-white">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
+        ))}
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
+
   );
 };
 

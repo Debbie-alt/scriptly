@@ -52,28 +52,28 @@ const settings = {
     </div>
   ),
   customPaging: () => (
-    <div className="w-3 h-3 rounded-full bg-gray-400 opacity-60 hover:opacity-100 transition-all" />
+    <div className="w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-500 opacity-60 hover:opacity-100 transition-all" />
   ),
 };
 
 const TestimonialCarousel = () => {
   return (
-    <section className="relative bg-[#111111] py-16 px-4 overflow-hidden">
-       {/* <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-br from-[#0f0e47] via-purple-700 to-transparent rounded-full blur-3xl opacity-60 z-0" /> */}
+<section className="relative bg-gray-50 dark:bg-[#111111] py-16 px-4 overflow-hidden">
+  {/* Decorative blur in light mode */}
+  <div className="block absolute -top-10 -left-10 w-72 h-72 bg-purple-900/20 rounded-full blur-3xl"></div>
+  <div className="block absolute -bottom-16 -right-16 w-80 h-80 bg-blue-800/20 rounded-full blur-3xl"></div>
       <div className="max-w-4xl mx-auto ">
         <Slider {...settings}>
           {testimonials.map((t, idx) => (
             <div key={idx} className="px-2">
-              <div className="glassmorph-card rounded-2xl shadow-2xl p-6 md:p-10 flex flex-col gap-6 transition-all text-[#0f0e47] dark:text-purple-100"
-                style={{
-                  background: 'white',
-                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2), 0 1.5px 8px 0 rgba(80, 0, 120, 0.10)',
-                  border: '1.5px solid rgba(255,255,255,0.3)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  borderRadius: '1.5rem',
-                  position: 'relative',
-                }}
+              <div
+                className="
+                  rounded-2xl shadow-xl mb-5 p-6 md:p-10 flex flex-col gap-6 
+                  transition-all 
+                  bg-white dark:bg-[#1a1a1a] 
+                  border border-gray-200 dark:border-gray-700
+                  backdrop-blur-lg
+                "
               >
                 {/* Top bar */}
                 <div className="flex justify-between items-center">
@@ -87,23 +87,20 @@ const TestimonialCarousel = () => {
                     />
                     <div>
                       <h4 className="font-semibold text-lg">{t.name}</h4>
-                      <p className="text-sm text-gray-600 dark:text-purple-300">{t.role}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {t.role}
+                      </p>
                     </div>
                   </div>
-                  <Image
-                    src={t.companyLogo}
-                    alt="logo"
-                    width={40}
-                    height={40}
-                  />
+                  <Image src={t.companyLogo} alt="logo" width={40} height={40} />
                 </div>
 
                 {/* Content split */}
                 <div className="grid md:grid-cols-2 gap-6">
-                  <h3 className="text-xl md:text-2xl font-semibold leading-snug">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-snug text-[#0f0e47] dark:text-white">
                     {t.headline}
                   </h3>
-                  <p className="text-gray-700 dark:text-purple-200 text-base leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
                     “{t.quote}”
                   </p>
                 </div>

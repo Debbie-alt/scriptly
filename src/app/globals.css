@@ -18,13 +18,14 @@
 } */
 
 body {
-  font-family: 'Poppins', 'Quicksand', sans-serif;
+  font-family:  'Quicksand', sans-serif;
   background: linear-gradient(to right, #f2f0ef, #f2f2f2);
   /* Off-white to soft gold gradient */
   color: #333333; /* Charcoal text */
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
+  font-weight: 500;
 
 }
 
