@@ -7,7 +7,7 @@ import { ModeToggle } from "@/components/ui/modeToggle";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAuthPage = pathname === "/signin" || pathname === "/signup";
+  const isAuthPage = pathname === "/signin" || pathname === "/signup" || pathname === "/app/dashboard";
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       {!isAuthPage && <Navbar />}
