@@ -20,7 +20,7 @@ export default function Home() {
    <TestimonialCarousel/>
   <ToolsCarousel/>
      <Faq/>
-    {/* <SignUpCta/> */}
+    <SignUpCta/>
    
    </>
   );

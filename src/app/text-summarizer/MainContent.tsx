@@ -26,18 +26,27 @@ const SummarizerShowcase = () => {
   };
 
   return (
-    <section className="w-full py-20 px-6 bg-gradient-to-br from-[#1a103d] via- to-[#0b081d] text-white">
+    <section
+      className="w-full py-20 px-6 
+      bg-gradient-to-br from-white via-gray-50 to-gray-100 
+      dark:from-[#0a0a0a] dark:via-[#111111] dark:to-[#1a1a1a] 
+      transition-colors duration-500 hero-grid-lines"
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Summarizer Tool */}
-        <div className="relative bg-white/10 backdrop-blur-xl border border-purple-500/20 rounded-3xl shadow-2xl p-8 space-y-6">
+        <div
+          className="relative rounded-3xl shadow-2xl p-8 space-y-6
+          bg-white/90 border border-gray-200 
+          dark:bg-[#111111] dark:border-[#222222] dark:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+        >
           <form onSubmit={handleSubmit} className="space-y-4">
             <textarea
               className="w-full rounded-2xl p-4 text-base font-medium 
-              bg-gradient-to-br from-purple-50/90 to-white/90 
-              dark:from-[#1a1a2e] dark:to-[#111111]
+              bg-gradient-to-br from-white to-gray-50
+              dark:from-[#0d0d0d] dark:to-[#1a1a1a]
               text-gray-900 dark:text-gray-100 
-              border border-purple-300/40 dark:border-purple-700/60
-              focus:outline-none focus:ring-4 focus:ring-purple-500/40
+              border border-gray-300 dark:border-[#2a2a2a]
+              focus:outline-none focus:ring-2 focus:ring-indigo-400/40
               resize-none min-h-[160px] shadow-inner"
               placeholder="✨ Paste your text here..."
               value={input}
@@ -49,9 +58,9 @@ const SummarizerShowcase = () => {
               type="submit"
               disabled={loading || !input.trim()}
               className="w-full md:w-auto px-8 py-3 rounded-full
-                bg-gradient-to-r from-[#6d28d9] via-[#4b206b] to-[#18113a]
+                bg-[#8686ac] dark:bg-gradient-to-r  dark:from-[#222222] dark:to-[#333333]
                 text-white font-semibold tracking-wide
-                shadow-lg hover:shadow-purple-400/30 
+                shadow-lg hover:shadow-indigo-500/30 
                 hover:scale-[1.02] active:scale-[0.98] 
                 transition-all duration-300 disabled:opacity-60"
             >
@@ -61,11 +70,12 @@ const SummarizerShowcase = () => {
 
           {error && <div className="text-red-500 font-medium">{error}</div>}
 
-          <div className="rounded-2xl p-6 min-h-[140px] 
-            bg-gradient-to-br from-gray-50 to-purple-50 
-            dark:from-[#12121f] dark:to-[#1a1a2e] 
-            border border-purple-300/30 dark:border-purple-700/50 
-            shadow-inner text-gray-900 dark:text-gray-100">
+          <div
+            className="rounded-2xl p-6 min-h-[140px] 
+            bg-gray-50 dark:bg-[#0f0f0f]
+            border border-gray-200 dark:border-[#2a2a2a]
+            shadow-inner text-gray-900 dark:text-gray-100"
+          >
             {summary ? (
               <pre className="whitespace-pre-wrap break-words leading-relaxed">
                 {summary}
@@ -82,10 +92,10 @@ const SummarizerShowcase = () => {
             <a
               href="/signup"
               className="w-full block text-center px-6 py-3 rounded-full
-              bg-yellow-500/70
-              text-white font-semibold shadow-lg 
-            hover:scale-[1.02] active:scale-[0.98]
-              transition-all duration-300"
+              bg-indigo-950 text-white font-semibold shadow-lg
+              hover:scale-[1.02] active:scale-[0.98]
+              transition-all duration-300 
+              dark:bg-[#222222] dark:hover:bg-[#2d2d2d]"
             >
               🚀 Get full features
             </a>
@@ -98,8 +108,8 @@ const SummarizerShowcase = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-br from-white to-yellow-600"
+            className="text-4xl md:text-5xl font-bold 
+            text-gray-900 dark:text-gray-100"
           >
             Write Smarter. Save Time.
           </motion.h2>
@@ -108,13 +118,13 @@ const SummarizerShowcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-lg text-gray-300 max-w-md leading-relaxed"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-md leading-relaxed"
           >
             Scriptly AI helps you create concise summaries, essays, and more —
             empowering students, professionals, and creators to write with ease.
           </motion.div>
 
-          {/* Scrolling Text (loop effect) */}
+          {/* Scrolling Text */}
           <div className="overflow-hidden h-12 w-full max-w-sm relative">
             <motion.div
               animate={{ y: ["0%", "-100%"] }}
@@ -123,7 +133,8 @@ const SummarizerShowcase = () => {
                 duration: 6,
                 ease: "linear",
               }}
-              className="flex flex-col space-y-2 text-xl font-semibold"
+              className="flex flex-col space-y-7 text-lg font-semibold 
+              text-indigo-800 dark:text-gray-200"
             >
               <span>✨ Summarize instantly</span>
               <span>⚡ Save hours of work</span>

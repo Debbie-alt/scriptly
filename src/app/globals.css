@@ -148,24 +148,24 @@ body {
   body {
     @apply bg-background text-foreground;}}
 
-    .hero-grid-lines {
+.hero-grid-lines {
   position: relative;
 
   background: repeating-linear-gradient(
-    to right,
-    transparent,
-    transparent 99px,
-    rgba(120,120,130,0.13) 100px,
-    transparent 101px
-  ),
-  repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 99px,
-    rgba(120,120,130,0.13) 100px,
-    transparent 101px
-  );
-} 
+      to right,
+      transparent,
+      transparent 99px,
+      rgba(120, 120, 130, 0.2) 100px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 99px,
+      rgba(120, 120, 130, 0.2) 100px
+    );
+}
+
+
  
 
 .hero-bg-image {

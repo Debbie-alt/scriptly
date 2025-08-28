@@ -10,7 +10,7 @@ const Hero = () => {
       <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-24 flex flex-col-reverse md:flex-row justify-between items-center bg-white dark:bg-[#0b0b12]">
         {/* Left Section */}
         <div className="flex-1 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-semibold text-[#0f0e47] dark:text-white leading-snug">
+          <h1 className=" text-center md:text-left text-3xl mt-4 md:mt-0 sm:text-4xl mlgtext-5xl font-medium text-[#0f0e47] dark:text-white leading-snug">
             Discover <span className="text-purple-800 ">Scriptly</span> <br />
             Empowering Students, Elevating Results
           </h1>
@@ -19,21 +19,21 @@ const Hero = () => {
             Scriptly is your trusted partner for academic success. We connect you with expert writers, provide tailored essay and assignment help, and ensure every project is original, confidential, and delivered on time.
           </p>
 
-          <span className="inline-block px-3 py-1 mt-3 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full dark:bg-indigo-900/40 dark:text-indigo-300">
+          <span className="inline-block px-3 py-1 mt-3 text-xs sm:text-base font-medium text-indigo-700 bg-indigo-100 rounded-full dark:bg-indigo-900/40 dark:text-indigo-300">
             🎓 Academic Success Simplified
           </span>
 
           {/* Buttons */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-col md:flex-row gap-4">
             <Link
               href="/signin"
-              className="px-6 py-3 hover:bg-[#505081] text-white rounded-lg shadow bg-[#3e3e6d] transition-all font-semibold "
+              className="px-6 py-3 hover:bg-[#505081] text-sm sm:text-base text-center text-white rounded-lg shadow bg-[#3e3e6d] transition-all font-semibold "
             >
               Get Started
             </Link>
             <Link
               href="/about"
-              className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg shadow hover:bg-gray-200 transition-all font-semibold dark:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
+              className="px-6 py-3 bg-gray-100 text-sm sm:text-base text-gray-800 text-center rounded-lg shadow hover:bg-gray-200 transition-all font-semibold dark:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
             >
               Learn More
             </Link>
@@ -54,7 +54,7 @@ const Hero = () => {
             className="object-cover rounded-2xl relative z-10"
           />
 
-          <div className="flex flex-wrap gap-4 mt-8 text-gray-700 dark:text-gray-300">
+          <div className="flex flex-wrap gap-2 sm:gap-4 mt-8 text-gray-700 text-sm sm:text-base dark:text-gray-300">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-green-600 dark:text-green-400" /> Confidential
             </div>

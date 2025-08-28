@@ -27,11 +27,11 @@ const features = [
     icon: <TbTextRecognition />,
     href: "/ai-detector",
   },
-  {
-    label: "Text To Speech",
-    icon: <FaRegLightbulb />,
-    href: "/idea-generator",
-  },
+  // {
+  //   label: "Text To Speech",
+  //   icon: <FaRegLightbulb />,
+  //   href: "/idea-generator",
+  // },
 ];
 
 const AiFeatureTabs = () => {

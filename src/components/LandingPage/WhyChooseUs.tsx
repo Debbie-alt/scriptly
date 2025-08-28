@@ -106,7 +106,7 @@ const WhyChoose = () => {
             key={idx}
             variants={item}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="bg-white/60 hover:bg-white/80 dark:bg-black/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl"
+            className="bg-white/60 hover:bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl"
           >
             <div className="flex justify-center">{feature.icon}</div>
             <h4 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">

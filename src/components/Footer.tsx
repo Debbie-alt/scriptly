@@ -45,6 +45,7 @@ const Footer = () => {
           <h4 className="font-semibold mb-3">For Students</h4>
           <ul className="space-y-3 t">
             <li><Link href="/proofreader" className="hover:underline">Proofreader</Link></li>
+            <li><Link href="/text-generator" className="hover:underline">Essay Writer</Link></li>
             <li><Link href="/writers" className="hover:underline">Meet Our Writers</Link></li>
           </ul>
         </div>
@@ -55,12 +56,12 @@ const Footer = () => {
             <a href="#" aria-label="LinkedIn">
               <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" className="w-7 h-7 hover:scale-110 transition" />
             </a>
-            <a href="#" aria-label="Facebook"><img src='https://img.icons8.com/?size=35&id=118495&format=png&color=000000'/></a>
+                        <a href="#" aria-label="Facebook"><img src='https://img.icons8.com/?size=35&id=118495&format=png&color=000000'/></a>
             <a href="#" aria-label="Twitter"><FaXTwitter className="text-white text-2xl hover:scale-110 transition" /></a>
             <a href="#" aria-label="Instagram"><img src='https://img.icons8.com/?size=35&id=Xy10Jcu1L2Su&format=png&color=000000'/></a>
           </div>
           <h4 className="font-medium  mb-6">Contact Info</h4>
-          <p className="mb-1">Email: support@essaypro.com</p>
+          <p className="mb-1">Email: support@scriptly.com</p>
           {/* <p className="">Phone: +1 (800) 123-4567</p> */}
         </div>
 

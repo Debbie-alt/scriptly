@@ -38,7 +38,7 @@ const TextGeneratorHero = () => {
           className="space-y-6"
         >
           <h1 className="text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-            Generate Creative <span className="text-purple-800">Text</span> Instantly
+            Generate Creative <span className="text-purple-900">Text</span> Instantly
           </h1>
           <p className="text-lg text-gray-600 max-w-lg">
             Unleash ideas, marketing copy, and fresh content with the power of AI.

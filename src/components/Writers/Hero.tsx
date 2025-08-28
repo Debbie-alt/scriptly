@@ -33,7 +33,7 @@ const Hero = () => {
       
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(139,92,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(139,92,246,0.2),transparent_50%)]"></div>
 
-      <div className="relative flex flex-col-reverse md:flex-row justify-between items-center w-full z-10">
+      <div className="relative flex flex-col lg:flex-row justify-between gap-8 items-center w-full z-10">
         
         <div className="relative flex-1 flex justify-start items-center">
           <div className="absolute -top-10 -right-10 w-[420px] h-[420px] bg-gradient-to-br from-purple-200 via-purple-200 to-transparent dark:bg-transparent rounded-full blur-2xl opacity-70 z-0"></div>
@@ -42,14 +42,14 @@ const Hero = () => {
             alt="Writers Hero"
             width={500}
             height={400}
-            className="object-cover rounded-lg mt-20 relative z-10 dark:shadow-purple-900/40"
+            className="object-cover rounded-lg lg:mt-20  relative z-10 dark:shadow-purple-900/40"
           />
         </div>    
 
         {/* Text + CTA */}
-        <div className="flex-1 mt-20 md:mt-0 text-center md:text-left">
+        <div className="flex-1 lg:mt-20 md:mt-0 text-center md:text-left">
           <h1 className="text-5xl font-semibold text-[#0f0e47] dark:text-purple-50 leading-snug">
-            Meet Our <span className="text-purple-800 dark:tex0">Writers</span>
+            Meet Our <span className="text-purple-900">Writers</span>
           </h1>
           <p className="mt-6 text-lg text-gray-700 dark:text-gray-100 max-w-xl">
             Our team of professional writers is dedicated to helping you achieve academic excellence. 

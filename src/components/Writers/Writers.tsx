@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Star } from "lucide-react";
+import Link from 'next/link'
 
 const mockWriters = [
   { id: 1, name: "Jane Doe", subject: "Literature", image: "https://randomuser.me/api/portraits/women/44.jpg", bio: "Expert in English Literature and creative writing with 10+ years of experience.", rating: 5 },
@@ -92,9 +93,9 @@ const Writers = () => {
               <p className="text-gray-600 dark:text-[#bbb] mb-4 text-sm">
                 {writer.bio}
               </p>
-              <button className="mt-auto px-5 py-2 bg-[#0f0e47] hover:bg-[#272757] dark:bg-[#222] dark:hover:bg-[#333] text-white rounded-md shadow transition-all font-medium">
+              <Link href='/signup' className="mt-auto px-5 py-2 bg-[#0f0e47] hover:bg-[#272757] dark:bg-[#222] dark:hover:bg-[#333] text-white rounded-md shadow transition-all font-medium">
                 Contact Writer
-              </button>
+              </Link>
             </div>
           ))}
         </div>
