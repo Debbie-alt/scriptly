@@ -108,7 +108,7 @@ const SummarizerShowcase = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold 
+            className="text-4xl md:text-5xl font-medium 
             text-gray-900 dark:text-gray-100"
           >
             Write Smarter. Save Time.

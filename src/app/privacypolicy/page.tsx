@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         {/* Gradient for dark mode */}
         <div className="absolute inset-0 w-full h-full dark:bg-gradient-to-r dark:from-[#272757] dark:via-[#8686ac] dark:to-[#272757] z-0" />
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#18113a] dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-[#18113a] dark:text-white">
             Privacy Policy
           </h1>
           <p className="text-lg max-w-2xl mx-auto opacity-90 text-gray-700 dark:text-white">

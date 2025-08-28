@@ -21,7 +21,7 @@ const FreeVsPaid = () => {
           <span className="text-gray-700 dark:text-gray-100">Free vs Paid Features</span>
         </nav>
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900 dark:text-white ">Free vs Paid Features</h1>
+        <h1 className="text-3xl font-medium mb-1 text-gray-900 dark:text-white ">Free vs Paid Features</h1>
         <p className="text-gray-500 text-sm sm:text-base dark:text-gray-200 mb-6">What tools and services are free, and what are premium?</p>
         {/* Author */}
         <div className="flex items-center mb-8">

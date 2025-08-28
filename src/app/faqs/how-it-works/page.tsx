@@ -21,7 +21,7 @@ const HowItWorks = () => {
           <span className="text-gray-700 dark:text-gray-100">How Scriptly Works</span>
         </nav>
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900 dark:text-white ">How Scriptly Works</h1>
+        <h1 className="text-3xl font-semibold mb-1 text-gray-900 dark:text-white ">How Scriptly Works</h1>
         <p className="text-gray-500 dark:text-gray-200 mb-6">Step-by-step guide to ordering essays and assignments on Scriptly</p>
         {/* Author */}
         <div className="flex items-center mb-8">

@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getFunctions } from 'firebase/functions'; 
 import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai"
 
+import { getAuth } from "firebase/auth";
+
 
 
 const firebaseConfig = {
@@ -16,15 +18,12 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+export const auth = getAuth(app);
 
-// Initialize the Gemini Developer API backend service
 const ai = getAI(app, { backend: new GoogleAIBackend() });
 
 // Create a `GenerativeModel` instance with a model that supports your use case
 export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
-
-
 
 
 async function run() {
@@ -34,7 +33,7 @@ async function run() {
 
   const response = result.response;
   const text = response.text();
-  console.log(text);
+
 }
 
 run();

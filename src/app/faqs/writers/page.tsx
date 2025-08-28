@@ -21,7 +21,7 @@ const Writers = () => {
           <span className="text-gray-700">Meet Our Writers</span>
         </nav>
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900">Meet Our Writers</h1>
+        <h1 className="text-3xl font-semibold mb-1 text-gray-900">Meet Our Writers</h1>
         <p className="text-gray-500 mb-6">Learn about our expert writers and their qualifications</p>
         {/* Author */}
         <div className="flex items-center mb-8">

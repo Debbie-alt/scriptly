@@ -6,14 +6,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  updateProfile,
   AuthError,
 } from "firebase/auth";
 import { app } from "@/config/firebase.config";
 import { useRouter } from "next/navigation";
 
 export default function SignUp() {
-  const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
@@ -49,24 +47,9 @@ export default function SignUp() {
       return;
     }
 
-    if (!name.trim()) {
-      setError("Please enter your name");
-      return;
-    }
-
     setLoading(true);
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      // Set displayName for the new user
-      await updateProfile(userCredential.user, {
-        displayName: name,
-      });
-
+      await createUserWithEmailAndPassword(auth, email, password);
       router.push("/signin"); // redirect on success
     } catch (err: any) {
       setError(getErrorMessage(err));
@@ -90,7 +73,8 @@ export default function SignUp() {
   };
 
   return (
-    <main className="min-h-screen py-16 p-4 flex items-center justify-center bg-[url('/skypic1.jpg')] bg-cover bg-center">
+    <main
+      className="min-h-screen py-16 p-4 flex items-center justify-center bg-[url('/skypic1.jpg')]  bg-cover bg-center">
       <div className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl bg-white/70 backdrop-blur-lg border border-white/40">
         
         <div className="flex justify-center mb-6">
@@ -113,7 +97,7 @@ export default function SignUp() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">
           Create your account
         </h2>
         <p className="text-center text-gray-800 text-sm mb-6">
@@ -121,14 +105,6 @@ export default function SignUp() {
         </p>
 
         <form className="space-y-4" onSubmit={handleEmailSignup}>
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-white/70 border border-gray-200 
-                       focus:ring-2 focus:ring-blue-400 outline-none"
-          />
           <input
             type="email"
             placeholder="Email"
@@ -194,10 +170,11 @@ export default function SignUp() {
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
               alt="Facebook"
-              className="w-8 h-8"
+              className="w-8 h-8 "
               loading="eager"
             />
           </a>
+          
         </div>
       </div>
     </main>

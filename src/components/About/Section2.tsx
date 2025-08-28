@@ -26,7 +26,7 @@ const Section2 = () => {
 
       {/* Right: Content */}
       <div className="flex-1 relative z-10" data-aos="fade-left">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0f0e47] dark:text-white mb-6">
+        <h2 className="text-3xl md:text-4xl font-semibold  text-[#0f0e47] dark:text-white mb-6">
           What We Do
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">

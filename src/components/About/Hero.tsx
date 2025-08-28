@@ -10,7 +10,7 @@ const Hero = () => {
       <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-24 flex flex-col-reverse md:flex-row justify-between items-center bg-white dark:bg-[#0b0b12]">
         {/* Left Section */}
         <div className="flex-1 relative z-10">
-          <h1 className=" text-center md:text-left text-3xl mt-4 md:mt-0 sm:text-4xl mlgtext-5xl font-medium text-[#0f0e47] dark:text-white leading-snug">
+          <h1 className=" text-center md:text-left text-3xl mt-4 md:mt-0 sm:text-4xl lg:text-5xl font-medium text-[#0f0e47] dark:text-white leading-snug">
             Discover <span className="text-purple-800 ">Scriptly</span> <br />
             Empowering Students, Elevating Results
           </h1>
@@ -72,19 +72,19 @@ const Hero = () => {
       <section className="px-6 md:px-12 lg:px-20 pb-8 bg-white dark:bg-[#0b0b12]">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <p className="text-3xl font-bold text-[#0f0e47] dark:text-white">5k+</p>
+            <p className="text-3xl font-medium text-[#0f0e47] dark:text-white">5k+</p>
             <p className="text-sm text-gray-600 dark:text-gray-400">Students Helped</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-[#0f0e47] dark:text-white">98%</p>
+            <p className="text-3xl font-medium text-[#0f0e47] dark:text-white">98%</p>
             <p className="text-sm text-gray-600 dark:text-gray-400">Satisfaction Rate</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-[#0f0e47] dark:text-white">1,200+</p>
+            <p className="text-3xl font-medium text-[#0f0e47] dark:text-white">1,200+</p>
             <p className="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-[#0f0e47] dark:text-white">24/7</p>
+            <p className="text-3xl font-medium text-[#0f0e47] dark:text-white">24/7</p>
             <p className="text-sm text-gray-600 dark:text-gray-400">Support Available</p>
           </div>
         </div>

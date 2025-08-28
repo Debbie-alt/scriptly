@@ -23,7 +23,7 @@ export default function SignIn() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Redirect or show success
-      router.push('/dashboard')
+      router.push('/app/dashboard')
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -39,6 +39,7 @@ export default function SignIn() {
       await signInWithPopup(auth, provider);
       // Redirect or show success
     } catch (err: any) {
+      console.log(err)
       setError(err.message);
     } finally {
       setLoading(false);
@@ -49,7 +50,7 @@ export default function SignIn() {
     <main
       className="min-h-screen flex items-center p-5 justify-center bg-[url('/skypic1.jpg')] bg-cover bg-center" >
       {/* Login Card */}
-      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/90 backdrop-blur-lg border border-white/40">
+      <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/70 backdrop-blur-lg border border-white/40">
         
         {/* Icon */}
         <div className="flex justify-center mb-6">
@@ -72,7 +73,7 @@ export default function SignIn() {
         </div>
 
         {/* Title */}
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">
           Sign in with email
         </h2>
         <p className="text-center text-gray-800 text-sm mb-6">
@@ -110,7 +111,7 @@ export default function SignIn() {
                        text-white font-semibold hover:opacity-90 disabled:opacity-60"
             disabled={loading}
           >
-            {loading ? 'Signing in...' : 'Get Started'}
+            {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
 

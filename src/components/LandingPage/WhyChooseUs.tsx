@@ -79,7 +79,7 @@ const WhyChoose = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl text-center font-bold mb-4 text-gray-900 dark:text-gray-300"
+        className="text-3xl md:text-4xl text-center font-semibold  mb-4 text-gray-900 dark:text-gray-300"
       >
         Why Choose <span className="text-[#272727] dark:text-gray-300">Scriptly</span>?
       </motion.h2>
@@ -109,7 +109,7 @@ const WhyChoose = () => {
             className="bg-white/60 hover:bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl"
           >
             <div className="flex justify-center">{feature.icon}</div>
-            <h4 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">
+            <h4 className="font-medium text-lg text-gray-900 dark:text-white mb-2">
               {feature.title}
             </h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">

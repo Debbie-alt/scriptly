@@ -26,7 +26,7 @@ const Integrity = () => {
           <span className="text-gray-700">Academic Integrity</span>
         </nav>
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900">
+        <h1 className="text-3xl font-medium mb-1 text-gray-900">
           Academic Integrity
         </h1>
         <p className="text-gray-500 text-sm sm:text-base mb-6">

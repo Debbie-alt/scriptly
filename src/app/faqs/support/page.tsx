@@ -21,7 +21,7 @@ const Support = () => {
           <span className="text-gray-700">Support & Troubleshooting</span>
         </nav>
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900">Support & Troubleshooting</h1>
+        <h1 className="text-3xl font-semibold mb-1 text-gray-900">Support & Troubleshooting</h1>
         <p className="text-gray-500 text-sm sm:text-base mb-6">Get help with your orders, tools, or account</p>
         {/* Author */}
         <div className="flex items-center mb-8">

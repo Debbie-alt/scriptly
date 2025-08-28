@@ -86,7 +86,7 @@ export default function OurStorySection(props: OurStoryProps) {
           </span>
           <h2
             id="our-story-heading"
-            className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl"
+            className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl"
           >
             How {content.companyName} began—and where we’re headed
           </h2>
@@ -194,7 +194,7 @@ export default function OurStorySection(props: OurStoryProps) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <div className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+      <div className="text-2xl font-medium tracking-tight text-slate-900 dark:text-slate-50">
         {value}
       </div>
       <div className="mt-1 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">

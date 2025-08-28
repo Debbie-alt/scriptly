@@ -23,7 +23,7 @@ const AITools = () => {
         </nav>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-1 text-gray-900 dark:text-white ">
+        <h1 className="text-3xl font-semibold mb-1 text-gray-900 dark:text-white ">
           Using AI Tools
         </h1>
         <p className="text-gray-500 dark:text-gray-200 mb-6">

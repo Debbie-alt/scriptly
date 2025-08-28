@@ -33,7 +33,7 @@ const Writers = () => {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#1a1a1a]/40 via-[#111111]/30 to-transparent rounded-full blur-2xl opacity-20 z-0" />
 
       <div className="relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 text-[#0f0e47] dark:text-[#f5f5f5]">
+        <h2 className="text-3xl md:text-5xl font-semibold text-center mb-10 text-[#0f0e47] dark:text-[#f5f5f5]">
           Meet Our Writers
         </h2>
 
