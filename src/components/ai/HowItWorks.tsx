@@ -2,9 +2,20 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle, FileText, Edit3 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const HowItWorks = () => {
-  const steps = [
+
+
+
+  const pathname = usePathname();
+
+  const plagiarismTitle =  pathname == '/plagiarism-checking' ? "AI Checks" : "AI Summarizes"
+  const desc = pathname ==  '/plagiarism-checking' ? 'Our plagiarism checker looks through the internet for similar or copied texts' : 'Scriptly’s AI instantly condenses your content into clear, concise ideas.'
+
+
+  const steps = 
+  [
     {
       icon: <FileText className="w-6 h-6 text-purple-700" />,
       title: "Type or Paste",
@@ -12,8 +23,8 @@ const HowItWorks = () => {
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-yellow-700/70" />,
-      title: "AI Summarizes",
-      description: "Scriptly’s AI instantly condenses your content into clear, concise ideas.",
+      title: plagiarismTitle,
+      description: desc,
     },
     {
       icon: <Edit3 className="w-6 h-6 text-purple-700" />,
@@ -65,7 +76,7 @@ const HowItWorks = () => {
       viewport={{ once: true }}
     >
       <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white text-center md:text-left">
-        How It <span className="text-indigo-700 dark:text-indigo-400">Works</span>
+        How It <span className="text-indigo-900 dark:text-indigo-800">Works</span>
       </h2>
 
       <p className="max-w-xl text-lg text-gray-700 dark:text-gray-300 mb-12 text-center md:text-left">

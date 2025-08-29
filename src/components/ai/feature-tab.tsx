@@ -25,7 +25,7 @@ const features = [
   {
     label: "Plagiarism Checker",
     icon: <TbTextRecognition />,
-    href: "/ai-detector",
+    href: "/plagiarism-checking",
   },
   // {
   //   label: "Text To Speech",
