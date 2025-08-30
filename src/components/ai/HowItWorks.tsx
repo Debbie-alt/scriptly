@@ -65,7 +65,7 @@ const HowItWorks = () => {
       viewport={{ once: true }}
     >
       <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white text-center md:text-left">
-        How It <span className="text-indigo-700 dark:text-indigo-400">Works</span>
+        How It <span className="text-indigo-900 dark:text-indigo-800">Works</span>
       </h2>
 
       <p className="max-w-xl text-lg text-gray-700 dark:text-gray-300 mb-12 text-center md:text-left">

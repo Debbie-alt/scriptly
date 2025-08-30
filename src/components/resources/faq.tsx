@@ -85,7 +85,7 @@ export default function FAQ() {
           </AnimatePresence>
         </div>
 
-          <div className="mt-12 absolute bottom-0 right-10 w-screen justify-end flex hidden sm:flex " data-aos="zoom-in">
+          <div className="mt-12 absolute bottom-0 right-10 w-screen justify-end flex hidden md:flex " data-aos="zoom-in">
         <div className="absolute right-14 -bottom-20 w-72 h-72 bg-purple-100 dark:bg-purple-900/30 blur-xl opacity-80 rounded-full"></div>
         <div className="w-28 h-28 rounded-full right-10 bg-gradient-to-br from-[#0f0e47] to-[#8686ac] relative z-10 "></div>
       </div>
