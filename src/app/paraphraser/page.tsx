@@ -5,7 +5,7 @@ import { summarizeText } from '@/config/text-generator';
 import AiFeatureTabs from '@/components/ai/feature-tab';
 import Faq from '@/components/LandingPage/Faq';
 import TextSummarizerHero from '@/components/ai/parahraserHero';
-import SummarizerShowcase from '../text-summarizer/MainContent';
+import SummarizerShowcase from '../../components/MainContent';
 import HowItWorks from '@/components/ai/HowItWorks';
 
 const TextSummarizerPage = () => {
