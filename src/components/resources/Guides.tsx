@@ -62,7 +62,7 @@ const GuidesSection = () => {
               transition={{ duration: 0.7, delay: index * 0.15 }}
               className="group bg-white dark:bg-[#141414] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-md p-6 text-left hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
             >
-            <Link href={`/guides/${guide.slug}`}>
+            <Link href={`/resources/${guide.slug}`}>
     <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#1e1e1e] mb-4">
       {guide.icon}
     </div>

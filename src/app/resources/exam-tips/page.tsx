@@ -9,7 +9,7 @@ const FEEDBACK = [
   { label: "happy", emoji: "😊" },
 ];
 
-const WritingTutorialsPage = () => {
+const ExamTipsPage = () => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
@@ -19,36 +19,36 @@ const WritingTutorialsPage = () => {
         <nav className="text-sm text-gray-500 dark:text-gray-300 mb-6 flex items-center gap-1">
           <Link href="/resources" className="hover:underline text-purple-800 dark:text-purple-300">Resources</Link>
           <FiChevronRight className="text-base text-gray-400 dark:text-gray-300 mx-1" />
-          <span className="text-gray-700 dark:text-gray-100">Writing Tutorials</span>
+          <span className="text-gray-700 dark:text-gray-100">Exam Tips</span>
         </nav>
 
         {/* Title */}
-        <h1 className="text-3xl font-semibold mb-1 text-gray-900 dark:text-white">Writing Tutorials</h1>
+        <h1 className="text-3xl font-semibold mb-1 text-gray-900 dark:text-white">Exam Tips</h1>
         <p className="text-gray-500 dark:text-gray-200 mb-6">
-          Learn step-by-step how to write essays, reports, and research papers with clarity.
+          Practical strategies to prepare effectively and perform confidently in exams.
         </p>
 
         {/* Author */}
         <div className="flex items-center mb-8">
-          <img src="https://api.dicebear.com/7.x/identicon/svg?seed=writing" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
+          <img src="https://api.dicebear.com/7.x/identicon/svg?seed=exam" alt="Author avatar" className="w-10 h-10 rounded-full mr-3" />
           <div>
             <p className="text-sm text-gray-800 dark:text-gray-100">Written by Scriptly Team</p>
-            <p className="text-xs text-gray-500 dark:text-gray-300">Updated last week</p>
+            <p className="text-xs text-gray-500 dark:text-gray-300">Updated yesterday</p>
           </div>
         </div>
 
         {/* Content */}
         <ol className="list-decimal list-inside space-y-4 text-sm sm:text-base text-gray-800 dark:text-gray-100 mb-8">
-          <li>Understand your assignment requirements clearly.</li>
-          <li>Brainstorm and outline your main arguments.</li>
-          <li>Write a strong introduction with a clear thesis.</li>
-          <li>Develop each section with evidence and examples.</li>
-          <li>Edit and proofread carefully for grammar and flow.</li>
+          <li>Plan your study schedule well in advance.</li>
+          <li>Practice past questions under timed conditions.</li>
+          <li>Get enough sleep and maintain healthy habits.</li>
+          <li>Stay calm and manage your exam time wisely.</li>
+          <li>Review your answers if time permits.</li>
         </ol>
 
         {/* Feedback */}
         <div className="border-t pt-6 mt-12">
-          <p className="text-gray-800 dark:text-gray-100 font-medium mb-3">Was this tutorial helpful?</p>
+          <p className="text-gray-800 dark:text-gray-100 font-medium mb-3">Did these tips help you?</p>
           <div className="flex gap-6 text-2xl cursor-pointer">
             {FEEDBACK.map((item) => (
               <span
@@ -67,17 +67,17 @@ const WritingTutorialsPage = () => {
 
       {/* Sidebar */}
       <aside className="w-full md:w-64 border-l pl-6 text-sm text-gray-600 dark:text-gray-200">
-        <p className="font-medium text-gray-800 dark:text-gray-100 mb-2">Steps in this tutorial:</p>
+        <p className="font-medium text-gray-800 dark:text-gray-100 mb-2">Steps in this guide:</p>
         <ol className="space-y-1 list-decimal list-inside">
-          <li>Understand task</li>
-          <li>Outline arguments</li>
-          <li>Write thesis</li>
-          <li>Build body</li>
-          <li>Edit & proofread</li>
+          <li>Plan early</li>
+          <li>Practice past papers</li>
+          <li>Sleep & health</li>
+          <li>Stay calm</li>
+          <li>Review answers</li>
         </ol>
       </aside>
     </div>
   );
 };
 
-export default WritingTutorialsPage;
+export default ExamTipsPage;
