@@ -2,24 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Book, PenTool, GraduationCap } from "lucide-react";
+import Link from "next/link";
 
 const guides = [
   {
+    slug: "study-guides",
     icon: <Book className="w-6 h-6 text-purple-600 dark:text-purple-400" />,
     title: "Study Guides",
     description: "Step-by-step guides to help you summarize, learn, and revise effectively.",
   },
   {
+    slug: "writing-tutorials",
     icon: <PenTool className="w-6 h-6 text-pink-600 dark:text-pink-400" />,
     title: "Writing Tutorials",
     description: "Learn how to craft essays, reports, and notes with clear structure and style.",
   },
   {
+    slug: "exam-tips",
     icon: <GraduationCap className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />,
     title: "Exam Tips",
     description: "Proven techniques to prepare smarter and retain knowledge longer.",
   },
 ];
+
 
 const GuidesSection = () => {
   return (
@@ -57,15 +62,17 @@ const GuidesSection = () => {
               transition={{ duration: 0.7, delay: index * 0.15 }}
               className="group bg-white dark:bg-[#141414] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-md p-6 text-left hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#1e1e1e] mb-4">
-                {guide.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                {guide.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                {guide.description}
-              </p>
+            <Link href={`/guides/${guide.slug}`}>
+    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#1e1e1e] mb-4">
+      {guide.icon}
+    </div>
+    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+      {guide.title}
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400 text-sm">
+      {guide.description}
+    </p>
+  </Link>
             </motion.div>
           ))}
         </div>
