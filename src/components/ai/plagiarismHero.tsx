@@ -4,7 +4,10 @@ import { checkPlagiarism } from "@/config/plagiarism";
 import AiFeatureTabs from "./feature-tab";
 
 
+
 export default function PlagiarismHero() {
+
+
 const [text, setText] = useState("");
 const [result, setResult] = useState("");
 const [loading, setLoading] = useState(false);
@@ -23,6 +26,7 @@ setResult("❌ Error while checking plagiarism.");
 setLoading(false);
 }
 }
+
 
 
 return (
@@ -72,6 +76,14 @@ className="mt-4 w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-900 to-
 {loading ? "⏳ Checking for similar texts…" : " Check Plagiarism"}
 </button>
 
+<button
+onClick={runCheck}
+disabled={loading || !text.trim()}
+className="mt-4 w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-900 to-indigo-950 text-white font-semibold shadow hover:opacity-90 disabled:opacity-50"
+>
+{loading ? "⏳ Checking for similar texts…" : " Check Plagiarism"}
+</button>
+
 
 {result && (
 <div className="mt-6 p-4 rounded-xl bg-indigo-50 text-indigo-900 dark:bg-indigo-900/30 dark:text-indigo-100">
@@ -84,4 +96,11 @@ className="mt-4 w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-900 to-
 </section>
 </div>
 );
+{result && (
+<div className="mt-6 p-4 rounded-xl bg-indigo-50 text-indigo-900 dark:bg-indigo-900/30 dark:text-indigo-100">
+<h3 className="font-semibold mb-2">Result 📊</h3>
+<p className="whitespace-pre-wrap">{result}</p>
+</div>
+)}
+
 }
