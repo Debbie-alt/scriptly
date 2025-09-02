@@ -31,8 +31,8 @@
 //   response.send("Hello from Firebase!");
 // });
 
-import * as functions from "firebase-functions";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// import * as functions from "firebase-functions";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Load Gemini API key from Firebase config
 // const genAI = new GoogleGenerativeAI(functions.config().gemini.key);
