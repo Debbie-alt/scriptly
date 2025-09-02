@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" 
-     className="light"
-// -                       style={{color-scheme:"light",}}
-    
-    >
+   <html lang="en" 
+ className="light"
+  style={{ colorScheme: "light" }}
+>
+  
       <body className="antialiased">
         <ClientLayout>{children}</ClientLayout>
         <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}>

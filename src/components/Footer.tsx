@@ -44,7 +44,7 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">For Students</h4>
           <ul className="space-y-3 t">
-            <li><Link href="/proofreader" className="hover:underline">Proofreader</Link></li>
+            <li><Link href="/proofreading" className="hover:underline">Proofreader</Link></li>
             <li><Link href="/text-generator" className="hover:underline">Essay Writer</Link></li>
             <li><Link href="/writers" className="hover:underline">Meet Our Writers</Link></li>
           </ul>
