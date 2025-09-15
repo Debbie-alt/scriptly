@@ -3,10 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, SendHorizontal } from "lucide-react";
-import { getChatResponse } from "@/config/chatbot";
 import { AiFillMessage } from "react-icons/ai";
-
-
+import { POST } from "@/app/api/chat/route";
 const faqs: { q: string; a: string; keywords: string[] }[] = [
   {
     q: "How do I use the Summarizer?",
@@ -30,7 +28,6 @@ const faqs: { q: string; a: string; keywords: string[] }[] = [
   },
 ];
 
-
 type ChatMessage = { role: "user" | "bot"; text: string; time: string };
 
 export default function ChatbotWidget() {
@@ -45,10 +42,15 @@ export default function ChatbotWidget() {
     return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
+  // Show welcome message when opened
   useEffect(() => {
     if (open && messages.length === 0) {
       setMessages([
-        { role: "bot", text: "👋 Hi there! How can we help you today?", time: getCurrentTime() },
+        {
+          role: "bot",
+          text: "👋 Hi there! How can we help you today?",
+          time: getCurrentTime(),
+        },
       ]);
     }
   }, [open]);
@@ -56,29 +58,49 @@ export default function ChatbotWidget() {
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    const userMsg: ChatMessage = { role: "user", text: input, time: getCurrentTime() };
+    const userMsg: ChatMessage = {
+      role: "user",
+      text: input,
+      time: getCurrentTime(),
+    };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setLoading(true);
 
     try {
-    const faqMatch = faqs.find((f) =>
-  f.keywords.some((kw) => input.toLowerCase().includes(kw))
-);
+      // Check FAQ match first
+      const faqMatch = faqs.find((f) =>
+        f.keywords.some((kw) => input.toLowerCase().includes(kw))
+      );
 
-let reply: string;
-if (faqMatch) {
-  reply = faqMatch.a;
-} else {
-  reply = await getChatResponse(input);
-}
+      let reply: string;
+      if (faqMatch) {
+        reply = faqMatch.a;
+      } else {
+        // Call Next.js API route
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: input }),
+        });
+        const data = await res.json();
+        reply = data.text || "⚠️ No response from server.";
+      }
 
-      const botMsg: ChatMessage = { role: "bot", text: reply, time: getCurrentTime() };
+      const botMsg: ChatMessage = {
+        role: "bot",
+        text: reply,
+        time: getCurrentTime(),
+      };
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
       setMessages((prev) => [
-        { role: "bot", text: "❌ Error fetching response", time: getCurrentTime() },
+        {
+          role: "bot",
+          text: "❌ Error fetching response",
+          time: getCurrentTime(),
+        },
       ]);
     } finally {
       setLoading(false);
@@ -88,12 +110,14 @@ if (faqMatch) {
   return (
     <div className="fixed bottom-4 left-4 z-60">
       {/* Toggle Button */}
-     <button
-  onClick={() => setOpen(!open)}
-  className={`${
-    open ? "bg-[#505081] hover:bg-gray-900" : "bg-[#505081] hover:bg-purple-950"
-  } text-white p-2 rounded-full shadow-lg`}
->
+      <button
+        onClick={() => setOpen(!open)}
+        className={`${
+          open
+            ? "bg-[#505081] hover:bg-gray-900"
+            : "bg-[#505081] hover:bg-purple-950"
+        } text-white p-2 rounded-full shadow-lg`}
+      >
         {open ? <X className="w-6 h-6" /> : <AiFillMessage className="w-5 h-5" />}
       </button>
 
@@ -105,17 +129,15 @@ if (faqMatch) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="mt-3  max-w-[85vw] sm:w-fit sm:max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
+            className="mt-3 max-w-[85vw] sm:w-fit sm:max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-black text-white px-4 py-5 flex items-center gap-3 shadow-md">
-              {/* Avatar */}
               <img
                 src="https://i.pravatar.cc/50?img=32"
                 alt="Assistant"
                 className="w-10 h-10 rounded-full border-2 border-white"
               />
-              {/* Text */}
               <div className="flex flex-col">
                 <span className="font-bold text-lg">How can I help you?</span>
                 <span className="text-xs text-purple-100">
@@ -144,11 +166,19 @@ if (faqMatch) {
                   </span>
                 </motion.div>
               ))}
-              {loading && <p className="text-sm text-gray-500">Thinking...</p>}
+              {loading && (
+                <p className="text-sm text-gray-500">Thinking...</p>
+              )}
             </div>
 
             {/* Input */}
-            <form className="p-3 border-t shadow-lg flex gap-2" onSubmit={(e) => { e.preventDefault(); sendMessage(); }}>
+            <form
+              className="p-3 border-t shadow-lg flex gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                sendMessage();
+              }}
+            >
               <input
                 className="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-purple-300"
                 value={input}
@@ -156,7 +186,7 @@ if (faqMatch) {
                 placeholder="Ask a question..."
               />
               <button
-                onClick={sendMessage}
+                type="submit"
                 className="text-purple-800 hover:bg-purple-800 hover:text-white px-2 py-2 rounded-lg text-sm flex items-center justify-center"
               >
                 <SendHorizontal className="w-6 h-5" />
