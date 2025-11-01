@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFunctions } from 'firebase/functions'; 
 import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai"
@@ -8,13 +7,13 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBDFmnJkzsi3l5a0wVE8hyuId67JBLpJKE",
-  authDomain: "scriptly-49ae4.firebaseapp.com",
-  projectId: "scriptly-49ae4",
-  storageBucket: "scriptly-49ae4.firebasestorage.app",
-  messagingSenderId: "688261450160",
-  appId: "1:688261450160:web:57b5d03c4628578b18ee75",
-  measurementId: "G-908XX48KTG"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
@@ -22,7 +21,6 @@ export const auth = getAuth(app);
 
 const ai = getAI(app, { backend: new GoogleAIBackend() });
 
-// Create a `GenerativeModel` instance with a model that supports your use case
 export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 
 
