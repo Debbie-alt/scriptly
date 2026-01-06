@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/modeToggle";
+import ChatbotWidget from "./faq/chatbot";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -13,7 +14,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {!isAuthPage && <Navbar />}
       <main>{children}</main>
       {!isAuthPage && <Footer />}
-      <div style={{ position: "fixed", bottom: "2rem", right: "2rem", zIndex: 50 }}>
+      <div style={{ position: "fixed", bottom: "2rem", left: "2rem", zIndex: 50 }}>
+        <ChatbotWidget/>
         <ModeToggle />
       </div>
     </ThemeProvider>

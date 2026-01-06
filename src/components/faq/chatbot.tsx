@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, SendHorizontal } from "lucide-react";
+import { X, SendHorizontal } from "lucide-react";
 import { AiFillMessage } from "react-icons/ai";
+
 const faqs: { q: string; a: string; keywords: string[] }[] = [
   {
     q: "How do I use the Summarizer?",
@@ -90,26 +91,29 @@ export default function ChatbotWidget() {
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
-      // setMessages((prev) => [
-      //   {
-      //     role: "bot",
-      //     text: "❌ Error fetching response",
-      //     time: getCurrentTime(),
-      //   },
-      // ]);
     } finally {
       setLoading(false);
-
     }
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-60">
+    <div className="fixed bottom-4 right-4 z-60 flex flex-col items-center">
+      {!open && (
+        <motion.div
+          initial={{ y: -10 }}
+          animate={{ y: [0, -6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.2 }}
+          className="mb-2 px-3 py-3 rounded-full bg-[#0f0e47] text-white text-xs font-semibold shadow-lg"
+        >
+          Talk to Zara 👇
+        </motion.div>
+      )}
+
       <button
         onClick={() => setOpen(!open)}
         className={`${
           open
-            ? "bg-[#505081] hover:bg-gray-900"
+            ? "bg-[#0f0e47]  hover:bg-gray-900"
             : "bg-[#505081] hover:bg-purple-950"
         } text-white p-2 rounded-full shadow-lg`}
       >
@@ -158,12 +162,9 @@ export default function ChatbotWidget() {
                   </span>
                 </motion.div>
               ))}
-              {loading && (
-                <p className="text-sm text-gray-500">Thinking...</p>
-              )}
+              {loading && <p className="text-sm text-gray-500">Thinking...</p>}
             </div>
 
-            {/* Input */}
             <form
               className="p-3 border-t shadow-lg flex gap-2"
               onSubmit={(e) => {
