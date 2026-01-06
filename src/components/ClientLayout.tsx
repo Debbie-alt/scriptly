@@ -16,7 +16,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {!isAuthPage && <Footer />}
       <div style={{ position: "fixed", bottom: "2rem", left: "2rem", zIndex: 50 }}>
         <ChatbotWidget/>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </div>
     </ThemeProvider>
   );
