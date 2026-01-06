@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, SendHorizontal } from "lucide-react";
 import { AiFillMessage } from "react-icons/ai";
-import { POST } from "@/app/api/chat/route";
 const faqs: { q: string; a: string; keywords: string[] }[] = [
   {
     q: "How do I use the Summarizer?",
@@ -36,13 +35,11 @@ export default function ChatbotWidget() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 👉 Helper for time
   const getCurrentTime = () => {
     const now = new Date();
     return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  // Show welcome message when opened
   useEffect(() => {
     if (open && messages.length === 0) {
       setMessages([
@@ -68,7 +65,6 @@ export default function ChatbotWidget() {
     setLoading(true);
 
     try {
-      // Check FAQ match first
       const faqMatch = faqs.find((f) =>
         f.keywords.some((kw) => input.toLowerCase().includes(kw))
       );
@@ -77,7 +73,6 @@ export default function ChatbotWidget() {
       if (faqMatch) {
         reply = faqMatch.a;
       } else {
-        // Call Next.js API route
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +105,6 @@ export default function ChatbotWidget() {
 
   return (
     <div className="fixed bottom-4 left-4 z-60">
-      {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
         className={`${
@@ -122,7 +116,6 @@ export default function ChatbotWidget() {
         {open ? <X className="w-6 h-6" /> : <AiFillMessage className="w-5 h-5" />}
       </button>
 
-      {/* Chat Window */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -132,7 +125,6 @@ export default function ChatbotWidget() {
             transition={{ duration: 0.3 }}
             className="mt-3 max-w-[85vw] sm:w-fit sm:max-w-[550px] h-[500px] bg-white rounded-2xl shadow-2xl border border-purple-200 flex flex-col overflow-hidden"
           >
-            {/* Header */}
             <div className="bg-black text-white px-4 py-5 flex items-center gap-3 shadow-md">
               <img
                 src="https://i.pravatar.cc/50?img=32"
@@ -147,7 +139,6 @@ export default function ChatbotWidget() {
               </div>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-3 space-y-2">
               {messages.map((m, i) => (
                 <motion.div

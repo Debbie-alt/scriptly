@@ -26,6 +26,7 @@ const ai = getAI(app, { backend: new GoogleAIBackend() });
 export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 
 
+
 async function run() {
   const prompt = "Write a story about a magic backpack."
 
