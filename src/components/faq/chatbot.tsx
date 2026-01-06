@@ -95,15 +95,16 @@ export default function ChatbotWidget() {
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
-      setMessages((prev) => [
-        {
-          role: "bot",
-          text: "❌ Error fetching response",
-          time: getCurrentTime(),
-        },
-      ]);
+      // setMessages((prev) => [
+      //   {
+      //     role: "bot",
+      //     text: "❌ Error fetching response",
+      //     time: getCurrentTime(),
+      //   },
+      // ]);
     } finally {
       setLoading(false);
+
     }
   };
 

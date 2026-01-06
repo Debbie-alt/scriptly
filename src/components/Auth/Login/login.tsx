@@ -62,6 +62,7 @@ export default function SignIn() {
       router.push("/app/dashboard");
     } catch (err: any) {
       setError(getErrorMessage(err.code));
+      console.log(err)
     } finally {
       setLoading(false);
     }
