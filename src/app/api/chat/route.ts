@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     console.error("Chat API error:", error);
 
     return NextResponse.json(
-      { text: "⚠️ Daily AI request limit reached. Please try again later." },
+      { text: "⚠️ Sorryy. My daily AI request limit for today has been reached. Please try again tomorrow." },
       { status: 500 }
     );
   }
