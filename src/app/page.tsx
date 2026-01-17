@@ -15,10 +15,8 @@ export default function Home() {
     <Hero/>
     <WhyChoose/>
     <Cta/>
-   
-
-   <TestimonialCarousel/>
-  <ToolsCarousel/>
+    <TestimonialCarousel/>
+      <ToolsCarousel/>
      <Faq/>
     <SignUpCta/>
    

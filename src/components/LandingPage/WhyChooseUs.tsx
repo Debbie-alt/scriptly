@@ -70,7 +70,7 @@ const item: Variants = {
 
 const WhyChoose = () => {
   return (
-    <section className="relative px-4 sm:px-12 md:px-16 py-20 overflow-hidden bg-gray-50 dark:bg-[#0d0d0d]">
+    <section className="relative px-2 sm:px-6 md:px-8 py-20 overflow-hidden bg-gray-50 dark:bg-[#0d0d0d]">
       {/* Glass gradient background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-200 dark:from-[#0d0d0d] dark:via-[#111] dark:to-[#1a1a1a]" />
 
@@ -81,7 +81,8 @@ const WhyChoose = () => {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl text-center font-semibold  mb-4 text-gray-900 dark:text-gray-300"
       >
-        Why Choose <span className="text-[#272727] dark:text-gray-300">Scriptly</span>?
+        Why Choose{" "}
+        <span className="text-[#272727] dark:text-gray-300">Scriptly</span>?
       </motion.h2>
 
       <motion.p
@@ -91,7 +92,8 @@ const WhyChoose = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mb-12 text-base md:text-lg text-center text-gray-600 dark:text-gray-400"
       >
-        Your trusted partner for essays, research papers, and academic writing success.
+        Your trusted partner for essays, research papers, and academic writing
+        success.
       </motion.p>
 
       <motion.div
@@ -99,14 +101,14 @@ const WhyChoose = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-full"
       >
         {features.map((feature, idx) => (
           <motion.div
             key={idx}
             variants={item}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="bg-white/60 hover:bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl"
+            className="bg-white/60 hover:bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-4 sm:p-8 text-center transition-all duration-300 hover:shadow-xl w-full max-w-full"
           >
             <div className="flex justify-center">{feature.icon}</div>
             <h4 className="font-medium text-lg text-gray-900 dark:text-white mb-2">
