@@ -61,7 +61,7 @@ const carouselSettings = {
 
 const Hero = () => {
   return (
-    <section className="hero-bg-image relatie py-16 min-h-screen px-4 md:px-8 xl:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
+    <section className="hero-bg-image relative py-16 min-h-screen px-4 md:px-8 xl:px-24 flex flex-col items-center lg:flex-row lg:items-start text-center lg:text-left bg-white dark:bg-[#111111]">
       <div className="hero-bg-left inset-0 absolute z-0" />
 
       <div className="w-full lg:w-2/3 flex flex-col items-center text-center rve m-h-fit py-10 z-10 mt-6 md:mt-0">

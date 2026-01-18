@@ -8,13 +8,13 @@ import { useTheme } from "next-themes"
 export function ModeToggle() {
   const { theme, setTheme } = useTheme()
 
-  const isDark = theme === "light"
+  const isDark = theme === "dark"
 
   return (
     <button
       aria-label="Toggle theme"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative flex items-center justify-center w-9 h-9 bg-white rounded-full border border-gray-300 bg-inherit hover:bg-gray-100 dark:bg-gray-800 transition-colors duration-200 focus:outline-none"
+      className="relative flex items-center justify-center w-9 h-9 bg-white rounded-full border border-gray-300  hover:bg-gray-100 dark:bg-gray-800 transition-colors duration-200 focus:outline-none"
       type="button"
     >
       <Sun
